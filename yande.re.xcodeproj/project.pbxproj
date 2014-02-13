@@ -1,0 +1,486 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		928CCD8D18AD1E9D0072F88C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD8C18AD1E9D0072F88C /* Foundation.framework */; };
+		928CCD8F18AD1E9D0072F88C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD8E18AD1E9D0072F88C /* CoreGraphics.framework */; };
+		928CCD9118AD1E9D0072F88C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD9018AD1E9D0072F88C /* UIKit.framework */; };
+		928CCD9718AD1E9D0072F88C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 928CCD9518AD1E9D0072F88C /* InfoPlist.strings */; };
+		928CCD9918AD1E9D0072F88C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 928CCD9818AD1E9D0072F88C /* main.m */; };
+		928CCD9D18AD1E9D0072F88C /* YANAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 928CCD9C18AD1E9D0072F88C /* YANAppDelegate.m */; };
+		928CCDA018AD1E9D0072F88C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 928CCD9E18AD1E9D0072F88C /* Main_iPhone.storyboard */; };
+		928CCDA318AD1E9D0072F88C /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 928CCDA118AD1E9D0072F88C /* Main_iPad.storyboard */; };
+		928CCDA618AD1E9D0072F88C /* YANViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 928CCDA518AD1E9D0072F88C /* YANViewController.m */; };
+		928CCDA818AD1E9D0072F88C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 928CCDA718AD1E9D0072F88C /* Images.xcassets */; };
+		928CCDAF18AD1E9D0072F88C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCDAE18AD1E9D0072F88C /* XCTest.framework */; };
+		928CCDB018AD1E9D0072F88C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD8C18AD1E9D0072F88C /* Foundation.framework */; };
+		928CCDB118AD1E9D0072F88C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD9018AD1E9D0072F88C /* UIKit.framework */; };
+		928CCDB918AD1E9D0072F88C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 928CCDB718AD1E9D0072F88C /* InfoPlist.strings */; };
+		928CCDBB18AD1E9D0072F88C /* yande_reTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 928CCDBA18AD1E9D0072F88C /* yande_reTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		928CCDB218AD1E9D0072F88C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 928CCD8118AD1E9D0072F88C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 928CCD8818AD1E9D0072F88C;
+			remoteInfo = yande.re;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		928CCD8918AD1E9D0072F88C /* yande.re.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yande.re.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		928CCD8C18AD1E9D0072F88C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		928CCD8E18AD1E9D0072F88C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		928CCD9018AD1E9D0072F88C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		928CCD9418AD1E9D0072F88C /* yande.re-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "yande.re-Info.plist"; sourceTree = "<group>"; };
+		928CCD9618AD1E9D0072F88C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		928CCD9818AD1E9D0072F88C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		928CCD9A18AD1E9D0072F88C /* yande.re-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yande.re-Prefix.pch"; sourceTree = "<group>"; };
+		928CCD9B18AD1E9D0072F88C /* YANAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YANAppDelegate.h; sourceTree = "<group>"; };
+		928CCD9C18AD1E9D0072F88C /* YANAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YANAppDelegate.m; sourceTree = "<group>"; };
+		928CCD9F18AD1E9D0072F88C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		928CCDA218AD1E9D0072F88C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		928CCDA418AD1E9D0072F88C /* YANViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YANViewController.h; sourceTree = "<group>"; };
+		928CCDA518AD1E9D0072F88C /* YANViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YANViewController.m; sourceTree = "<group>"; };
+		928CCDA718AD1E9D0072F88C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		928CCDAD18AD1E9D0072F88C /* yande.reTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yande.reTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		928CCDAE18AD1E9D0072F88C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		928CCDB618AD1E9D0072F88C /* yande.reTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "yande.reTests-Info.plist"; sourceTree = "<group>"; };
+		928CCDB818AD1E9D0072F88C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		928CCDBA18AD1E9D0072F88C /* yande_reTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = yande_reTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		928CCD8618AD1E9D0072F88C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				928CCD8F18AD1E9D0072F88C /* CoreGraphics.framework in Frameworks */,
+				928CCD9118AD1E9D0072F88C /* UIKit.framework in Frameworks */,
+				928CCD8D18AD1E9D0072F88C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		928CCDAA18AD1E9D0072F88C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				928CCDAF18AD1E9D0072F88C /* XCTest.framework in Frameworks */,
+				928CCDB118AD1E9D0072F88C /* UIKit.framework in Frameworks */,
+				928CCDB018AD1E9D0072F88C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		928CCD8018AD1E9D0072F88C = {
+			isa = PBXGroup;
+			children = (
+				928CCD9218AD1E9D0072F88C /* yande.re */,
+				928CCDB418AD1E9D0072F88C /* yande.reTests */,
+				928CCD8B18AD1E9D0072F88C /* Frameworks */,
+				928CCD8A18AD1E9D0072F88C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		928CCD8A18AD1E9D0072F88C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				928CCD8918AD1E9D0072F88C /* yande.re.app */,
+				928CCDAD18AD1E9D0072F88C /* yande.reTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		928CCD8B18AD1E9D0072F88C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				928CCD8C18AD1E9D0072F88C /* Foundation.framework */,
+				928CCD8E18AD1E9D0072F88C /* CoreGraphics.framework */,
+				928CCD9018AD1E9D0072F88C /* UIKit.framework */,
+				928CCDAE18AD1E9D0072F88C /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		928CCD9218AD1E9D0072F88C /* yande.re */ = {
+			isa = PBXGroup;
+			children = (
+				928CCD9B18AD1E9D0072F88C /* YANAppDelegate.h */,
+				928CCD9C18AD1E9D0072F88C /* YANAppDelegate.m */,
+				928CCD9E18AD1E9D0072F88C /* Main_iPhone.storyboard */,
+				928CCDA118AD1E9D0072F88C /* Main_iPad.storyboard */,
+				928CCDA418AD1E9D0072F88C /* YANViewController.h */,
+				928CCDA518AD1E9D0072F88C /* YANViewController.m */,
+				928CCDA718AD1E9D0072F88C /* Images.xcassets */,
+				928CCD9318AD1E9D0072F88C /* Supporting Files */,
+			);
+			path = yande.re;
+			sourceTree = "<group>";
+		};
+		928CCD9318AD1E9D0072F88C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				928CCD9418AD1E9D0072F88C /* yande.re-Info.plist */,
+				928CCD9518AD1E9D0072F88C /* InfoPlist.strings */,
+				928CCD9818AD1E9D0072F88C /* main.m */,
+				928CCD9A18AD1E9D0072F88C /* yande.re-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		928CCDB418AD1E9D0072F88C /* yande.reTests */ = {
+			isa = PBXGroup;
+			children = (
+				928CCDBA18AD1E9D0072F88C /* yande_reTests.m */,
+				928CCDB518AD1E9D0072F88C /* Supporting Files */,
+			);
+			path = yande.reTests;
+			sourceTree = "<group>";
+		};
+		928CCDB518AD1E9D0072F88C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				928CCDB618AD1E9D0072F88C /* yande.reTests-Info.plist */,
+				928CCDB718AD1E9D0072F88C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		928CCD8818AD1E9D0072F88C /* yande.re */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 928CCDBE18AD1E9D0072F88C /* Build configuration list for PBXNativeTarget "yande.re" */;
+			buildPhases = (
+				928CCD8518AD1E9D0072F88C /* Sources */,
+				928CCD8618AD1E9D0072F88C /* Frameworks */,
+				928CCD8718AD1E9D0072F88C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = yande.re;
+			productName = yande.re;
+			productReference = 928CCD8918AD1E9D0072F88C /* yande.re.app */;
+			productType = "com.apple.product-type.application";
+		};
+		928CCDAC18AD1E9D0072F88C /* yande.reTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 928CCDC118AD1E9D0072F88C /* Build configuration list for PBXNativeTarget "yande.reTests" */;
+			buildPhases = (
+				928CCDA918AD1E9D0072F88C /* Sources */,
+				928CCDAA18AD1E9D0072F88C /* Frameworks */,
+				928CCDAB18AD1E9D0072F88C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				928CCDB318AD1E9D0072F88C /* PBXTargetDependency */,
+			);
+			name = yande.reTests;
+			productName = yande.reTests;
+			productReference = 928CCDAD18AD1E9D0072F88C /* yande.reTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		928CCD8118AD1E9D0072F88C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = YAN;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = leafduo.com;
+				TargetAttributes = {
+					928CCDAC18AD1E9D0072F88C = {
+						TestTargetID = 928CCD8818AD1E9D0072F88C;
+					};
+				};
+			};
+			buildConfigurationList = 928CCD8418AD1E9D0072F88C /* Build configuration list for PBXProject "yande.re" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 928CCD8018AD1E9D0072F88C;
+			productRefGroup = 928CCD8A18AD1E9D0072F88C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				928CCD8818AD1E9D0072F88C /* yande.re */,
+				928CCDAC18AD1E9D0072F88C /* yande.reTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		928CCD8718AD1E9D0072F88C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				928CCDA318AD1E9D0072F88C /* Main_iPad.storyboard in Resources */,
+				928CCDA818AD1E9D0072F88C /* Images.xcassets in Resources */,
+				928CCDA018AD1E9D0072F88C /* Main_iPhone.storyboard in Resources */,
+				928CCD9718AD1E9D0072F88C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		928CCDAB18AD1E9D0072F88C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				928CCDB918AD1E9D0072F88C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		928CCD8518AD1E9D0072F88C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				928CCD9918AD1E9D0072F88C /* main.m in Sources */,
+				928CCDA618AD1E9D0072F88C /* YANViewController.m in Sources */,
+				928CCD9D18AD1E9D0072F88C /* YANAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		928CCDA918AD1E9D0072F88C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				928CCDBB18AD1E9D0072F88C /* yande_reTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		928CCDB318AD1E9D0072F88C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 928CCD8818AD1E9D0072F88C /* yande.re */;
+			targetProxy = 928CCDB218AD1E9D0072F88C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		928CCD9518AD1E9D0072F88C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				928CCD9618AD1E9D0072F88C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		928CCD9E18AD1E9D0072F88C /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				928CCD9F18AD1E9D0072F88C /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		928CCDA118AD1E9D0072F88C /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				928CCDA218AD1E9D0072F88C /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		928CCDB718AD1E9D0072F88C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				928CCDB818AD1E9D0072F88C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		928CCDBC18AD1E9D0072F88C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		928CCDBD18AD1E9D0072F88C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		928CCDBF18AD1E9D0072F88C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "yande.re/yande.re-Prefix.pch";
+				INFOPLIST_FILE = "yande.re/yande.re-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		928CCDC018AD1E9D0072F88C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "yande.re/yande.re-Prefix.pch";
+				INFOPLIST_FILE = "yande.re/yande.re-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		928CCDC218AD1E9D0072F88C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/yande.re.app/yande.re";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "yande.re/yande.re-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "yande.reTests/yande.reTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		928CCDC318AD1E9D0072F88C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/yande.re.app/yande.re";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "yande.re/yande.re-Prefix.pch";
+				INFOPLIST_FILE = "yande.reTests/yande.reTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		928CCD8418AD1E9D0072F88C /* Build configuration list for PBXProject "yande.re" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				928CCDBC18AD1E9D0072F88C /* Debug */,
+				928CCDBD18AD1E9D0072F88C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		928CCDBE18AD1E9D0072F88C /* Build configuration list for PBXNativeTarget "yande.re" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				928CCDBF18AD1E9D0072F88C /* Debug */,
+				928CCDC018AD1E9D0072F88C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		928CCDC118AD1E9D0072F88C /* Build configuration list for PBXNativeTarget "yande.reTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				928CCDC218AD1E9D0072F88C /* Debug */,
+				928CCDC318AD1E9D0072F88C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 928CCD8118AD1E9D0072F88C /* Project object */;
+}
