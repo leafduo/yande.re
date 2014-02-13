@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B798AF000FF4F25A4ABC64D /* libPods-yande.reTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3A5E74682D4F03913F823D /* libPods-yande.reTests.a */; };
+		856ED3B783484A98BAE4FEDE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A90111F084E4ED6B52A94E0 /* libPods.a */; };
 		928CCD8D18AD1E9D0072F88C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD8C18AD1E9D0072F88C /* Foundation.framework */; };
 		928CCD8F18AD1E9D0072F88C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD8E18AD1E9D0072F88C /* CoreGraphics.framework */; };
 		928CCD9118AD1E9D0072F88C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD9018AD1E9D0072F88C /* UIKit.framework */; };
@@ -35,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B3A5E74682D4F03913F823D /* libPods-yande.reTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-yande.reTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A90111F084E4ED6B52A94E0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		686894194FC74795A62810CB /* Pods-yande.reTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yande.reTests.xcconfig"; path = "Pods/Pods-yande.reTests.xcconfig"; sourceTree = "<group>"; };
 		928CCD8918AD1E9D0072F88C /* yande.re.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yande.re.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		928CCD8C18AD1E9D0072F88C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		928CCD8E18AD1E9D0072F88C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,6 +60,7 @@
 		928CCDB618AD1E9D0072F88C /* yande.reTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "yande.reTests-Info.plist"; sourceTree = "<group>"; };
 		928CCDB818AD1E9D0072F88C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		928CCDBA18AD1E9D0072F88C /* yande_reTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = yande_reTests.m; sourceTree = "<group>"; };
+		DA7A4A42626741208DFEAA4D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,7 @@
 				928CCD8F18AD1E9D0072F88C /* CoreGraphics.framework in Frameworks */,
 				928CCD9118AD1E9D0072F88C /* UIKit.framework in Frameworks */,
 				928CCD8D18AD1E9D0072F88C /* Foundation.framework in Frameworks */,
+				856ED3B783484A98BAE4FEDE /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +82,7 @@
 				928CCDAF18AD1E9D0072F88C /* XCTest.framework in Frameworks */,
 				928CCDB118AD1E9D0072F88C /* UIKit.framework in Frameworks */,
 				928CCDB018AD1E9D0072F88C /* Foundation.framework in Frameworks */,
+				4B798AF000FF4F25A4ABC64D /* libPods-yande.reTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +96,8 @@
 				928CCDB418AD1E9D0072F88C /* yande.reTests */,
 				928CCD8B18AD1E9D0072F88C /* Frameworks */,
 				928CCD8A18AD1E9D0072F88C /* Products */,
+				DA7A4A42626741208DFEAA4D /* Pods.xcconfig */,
+				686894194FC74795A62810CB /* Pods-yande.reTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +117,8 @@
 				928CCD8E18AD1E9D0072F88C /* CoreGraphics.framework */,
 				928CCD9018AD1E9D0072F88C /* UIKit.framework */,
 				928CCDAE18AD1E9D0072F88C /* XCTest.framework */,
+				4A90111F084E4ED6B52A94E0 /* libPods.a */,
+				1B3A5E74682D4F03913F823D /* libPods-yande.reTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,9 +174,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 928CCDBE18AD1E9D0072F88C /* Build configuration list for PBXNativeTarget "yande.re" */;
 			buildPhases = (
+				605D94BC70E947A7A570FC84 /* Check Pods Manifest.lock */,
 				928CCD8518AD1E9D0072F88C /* Sources */,
 				928CCD8618AD1E9D0072F88C /* Frameworks */,
 				928CCD8718AD1E9D0072F88C /* Resources */,
+				D1EC4BFE7570455291A39BD2 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,9 +193,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 928CCDC118AD1E9D0072F88C /* Build configuration list for PBXNativeTarget "yande.reTests" */;
 			buildPhases = (
+				A4795233B1C54BA8B006DCCC /* Check Pods Manifest.lock */,
 				928CCDA918AD1E9D0072F88C /* Sources */,
 				928CCDAA18AD1E9D0072F88C /* Frameworks */,
 				928CCDAB18AD1E9D0072F88C /* Resources */,
+				C338F41EE51D454B8C98B4E3 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,6 +264,69 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		605D94BC70E947A7A570FC84 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A4795233B1C54BA8B006DCCC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C338F41EE51D454B8C98B4E3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-yande.reTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1EC4BFE7570455291A39BD2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		928CCD8518AD1E9D0072F88C /* Sources */ = {
@@ -388,6 +467,7 @@
 		};
 		928CCDBF18AD1E9D0072F88C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA7A4A42626741208DFEAA4D /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -401,6 +481,7 @@
 		};
 		928CCDC018AD1E9D0072F88C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA7A4A42626741208DFEAA4D /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -414,6 +495,7 @@
 		};
 		928CCDC218AD1E9D0072F88C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 686894194FC74795A62810CB /* Pods-yande.reTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/yande.re.app/yande.re";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -436,6 +518,7 @@
 		};
 		928CCDC318AD1E9D0072F88C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 686894194FC74795A62810CB /* Pods-yande.reTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/yande.re.app/yande.re";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -471,6 +554,7 @@
 				928CCDC018AD1E9D0072F88C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		928CCDC118AD1E9D0072F88C /* Build configuration list for PBXNativeTarget "yande.reTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +563,7 @@
 				928CCDC318AD1E9D0072F88C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
