@@ -24,6 +24,9 @@
 		928CCDB118AD1E9D0072F88C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD9018AD1E9D0072F88C /* UIKit.framework */; };
 		928CCDB918AD1E9D0072F88C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 928CCDB718AD1E9D0072F88C /* InfoPlist.strings */; };
 		928CCDBB18AD1E9D0072F88C /* yande_reTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 928CCDBA18AD1E9D0072F88C /* yande_reTests.m */; };
+		9299A88E18AE92810011B4D3 /* YANHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9299A88C18AE92810011B4D3 /* YANHomePageViewController.m */; };
+		9299A89218AE9A6D0011B4D3 /* YANHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9299A89118AE9A6D0011B4D3 /* YANHTTPSessionManager.m */; };
+		9299A89518AEA4D30011B4D3 /* YANPhotoPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9299A89418AEA4D30011B4D3 /* YANPhotoPreviewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,12 @@
 		928CCDB618AD1E9D0072F88C /* yande.reTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "yande.reTests-Info.plist"; sourceTree = "<group>"; };
 		928CCDB818AD1E9D0072F88C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		928CCDBA18AD1E9D0072F88C /* yande_reTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = yande_reTests.m; sourceTree = "<group>"; };
+		9299A88B18AE92810011B4D3 /* YANHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANHomePageViewController.h; sourceTree = "<group>"; };
+		9299A88C18AE92810011B4D3 /* YANHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANHomePageViewController.m; sourceTree = "<group>"; };
+		9299A89018AE9A6D0011B4D3 /* YANHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANHTTPSessionManager.h; sourceTree = "<group>"; };
+		9299A89118AE9A6D0011B4D3 /* YANHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANHTTPSessionManager.m; sourceTree = "<group>"; };
+		9299A89318AEA4D30011B4D3 /* YANPhotoPreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANPhotoPreviewCell.h; sourceTree = "<group>"; };
+		9299A89418AEA4D30011B4D3 /* YANPhotoPreviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANPhotoPreviewCell.m; sourceTree = "<group>"; };
 		DA7A4A42626741208DFEAA4D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +138,12 @@
 				928CCD9B18AD1E9D0072F88C /* YANAppDelegate.h */,
 				928CCD9C18AD1E9D0072F88C /* YANAppDelegate.m */,
 				928CCD9E18AD1E9D0072F88C /* Main_iPhone.storyboard */,
+				9299A88B18AE92810011B4D3 /* YANHomePageViewController.h */,
+				9299A88C18AE92810011B4D3 /* YANHomePageViewController.m */,
+				9299A89318AEA4D30011B4D3 /* YANPhotoPreviewCell.h */,
+				9299A89418AEA4D30011B4D3 /* YANPhotoPreviewCell.m */,
+				9299A89018AE9A6D0011B4D3 /* YANHTTPSessionManager.h */,
+				9299A89118AE9A6D0011B4D3 /* YANHTTPSessionManager.m */,
 				928CCDA118AD1E9D0072F88C /* Main_iPad.storyboard */,
 				928CCDA418AD1E9D0072F88C /* YANViewController.h */,
 				928CCDA518AD1E9D0072F88C /* YANViewController.m */,
@@ -335,7 +350,10 @@
 			files = (
 				928CCD9918AD1E9D0072F88C /* main.m in Sources */,
 				928CCDA618AD1E9D0072F88C /* YANViewController.m in Sources */,
+				9299A89518AEA4D30011B4D3 /* YANPhotoPreviewCell.m in Sources */,
 				928CCD9D18AD1E9D0072F88C /* YANAppDelegate.m in Sources */,
+				9299A89218AE9A6D0011B4D3 /* YANHTTPSessionManager.m in Sources */,
+				9299A88E18AE92810011B4D3 /* YANHomePageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
