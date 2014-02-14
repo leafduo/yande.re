@@ -11,8 +11,12 @@
 #import "YANPhotoPreviewCell.h"
 #import <ReactiveCocoa.h>
 #import <UIImageView+WebCache.h>
+#import "YANPostModel.h"
 
 @interface YANHomePageViewController ()
+
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (nonatomic, strong) YANPostModel *postModel;
 
 @end
 
@@ -20,27 +24,39 @@
     NSArray *_imageURLArray;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+- (void)awakeFromNib {
+    self.postModel = [[YANPostModel alloc] init];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [[YANHTTPSessionManager sharedManager] GET:@"/post.json"
-                                    parameters:@{@"limit": @32}
-                                       success:^(NSURLSessionDataTask *task, NSArray *responseObject) {
-                                           _imageURLArray = [[[responseObject rac_sequence] map:^NSURL *(NSDictionary *value) {
-                                               return [NSURL URLWithString:value[@"preview_url"]];
-                                           }] array];
-                                           [self.collectionView reloadData];
-                                       }
-                                       failure:nil];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self
+                            action:@selector(refershControlAction:)
+                  forControlEvents:UIControlEventValueChanged];
+    [self.collectionView addSubview:self.refreshControl];
+    
+    [self refresh:nil];
+}
+
+- (IBAction)refresh:(id)sender {
+    [self.refreshControl beginRefreshing];
+    [[self.postModel loadData] subscribeNext:^(id x) {
+        _imageURLArray = [[[x rac_sequence] map:^NSURL *(NSDictionary *value) {
+            return [NSURL URLWithString:value[@"preview_url"]];
+        }] array];
+        [self.collectionView reloadData];
+        [self.refreshControl endRefreshing];
+    } error:^(NSError *error) {
+        [self.refreshControl endRefreshing];
+    }];
+}
+
+- (IBAction)refershControlAction:(id)sender {
+    [self refresh:nil];
 }
 
 - (void)didReceiveMemoryWarning
