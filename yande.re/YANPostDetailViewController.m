@@ -17,6 +17,9 @@
 @property (nonatomic, strong) IBOutlet UIImageView *imageView;
 @property (nonatomic, strong) IBOutlet MDRadialProgressView *progressView;
 
+@property (nonatomic, strong) UITapGestureRecognizer *dismissGesture;
+@property (nonatomic, strong) UILongPressGestureRecognizer *savePhotoGesture;
+
 @end
 
 @implementation YANPostDetailViewController
@@ -45,14 +48,24 @@
     });
     [self.imageView addSubview:self.progressView];
 
-    UITapGestureRecognizer *tapGestureRecognizer =
-        [[UITapGestureRecognizer alloc] init];
-    tapGestureRecognizer.numberOfTapsRequired = 2;
-    [[tapGestureRecognizer rac_gestureSignal] subscribeNext:^(id x) {
-        [self.presentingViewController dismissViewControllerAnimated:YES
-                                                          completion:nil];
-    }];
-    [self.imageView addGestureRecognizer:tapGestureRecognizer];
+    self.dismissGesture = ({
+        UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] init];
+        gesture.numberOfTapsRequired = 2;
+        [[gesture rac_gestureSignal] subscribeNext:^(id x) {
+            [self.presentingViewController dismissViewControllerAnimated:YES
+                                                              completion:nil];
+        }];
+        gesture;
+    });
+    [self.imageView addGestureRecognizer:self.dismissGesture];
+
+    self.savePhotoGesture = ({
+        UILongPressGestureRecognizer *gesture =
+            [[UILongPressGestureRecognizer alloc] init];
+        [gesture addTarget:self action:@selector(savePhoto:)];
+        gesture;
+    });
+    [self.imageView addGestureRecognizer:self.savePhotoGesture];
 
     @weakify(self);
     [RACObserve(self, post) subscribeNext:^(YANPost *post) {
@@ -94,8 +107,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Property
+
 - (void)setPost:(YANPost *)post {
     _post = post;
+}
+
+#pragma mark - Action
+
+- (IBAction)savePhoto:(id)sender {
+    UIImage *image = self.imageView.image;
+    UIImageWriteToSavedPhotosAlbum(image, nil, nil, NULL);
 }
 
 @end
