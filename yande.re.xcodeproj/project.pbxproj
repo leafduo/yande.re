@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4B798AF000FF4F25A4ABC64D /* libPods-yande.reTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3A5E74682D4F03913F823D /* libPods-yande.reTests.a */; };
 		856ED3B783484A98BAE4FEDE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A90111F084E4ED6B52A94E0 /* libPods.a */; };
+		9211C5ED18AFD4A20021665E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9211C5EC18AFD4A20021665E /* Crashlytics.framework */; };
 		927553AA18AF4E2D00DC16BA /* YANPostDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 927553A918AF4E2D00DC16BA /* YANPostDetailViewController.m */; };
 		928CCD8D18AD1E9D0072F88C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD8C18AD1E9D0072F88C /* Foundation.framework */; };
 		928CCD8F18AD1E9D0072F88C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD8E18AD1E9D0072F88C /* CoreGraphics.framework */; };
@@ -45,6 +46,7 @@
 		1B3A5E74682D4F03913F823D /* libPods-yande.reTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-yande.reTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A90111F084E4ED6B52A94E0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		686894194FC74795A62810CB /* Pods-yande.reTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yande.reTests.xcconfig"; path = "Pods/Pods-yande.reTests.xcconfig"; sourceTree = "<group>"; };
+		9211C5EC18AFD4A20021665E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		927553A818AF4E2D00DC16BA /* YANPostDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANPostDetailViewController.h; sourceTree = "<group>"; };
 		927553A918AF4E2D00DC16BA /* YANPostDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANPostDetailViewController.m; sourceTree = "<group>"; };
 		928CCD8918AD1E9D0072F88C /* yande.re.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yande.re.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +86,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				928CCD8F18AD1E9D0072F88C /* CoreGraphics.framework in Frameworks */,
+				9211C5ED18AFD4A20021665E /* Crashlytics.framework in Frameworks */,
 				928CCD9118AD1E9D0072F88C /* UIKit.framework in Frameworks */,
 				928CCD8D18AD1E9D0072F88C /* Foundation.framework in Frameworks */,
 				856ED3B783484A98BAE4FEDE /* libPods.a in Frameworks */,
@@ -128,6 +131,7 @@
 		928CCD8B18AD1E9D0072F88C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9211C5EC18AFD4A20021665E /* Crashlytics.framework */,
 				928CCD8C18AD1E9D0072F88C /* Foundation.framework */,
 				928CCD8E18AD1E9D0072F88C /* CoreGraphics.framework */,
 				928CCD9018AD1E9D0072F88C /* UIKit.framework */,
@@ -228,6 +232,7 @@
 				928CCD8618AD1E9D0072F88C /* Frameworks */,
 				928CCD8718AD1E9D0072F88C /* Resources */,
 				D1EC4BFE7570455291A39BD2 /* Copy Pods Resources */,
+				9211C5EB18AFD47C0021665E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -329,6 +334,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		9211C5EB18AFD47C0021665E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 8642627290b54634887afc54ed5ae8a3a5036e20 936c2c466c9ea5dd87244f62d66fa82e1d2c11f9feac622dfe6ece535c60890b";
 		};
 		A4795233B1C54BA8B006DCCC /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -526,6 +544,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "yande.re/yande.re-Prefix.pch";
 				INFOPLIST_FILE = "yande.re/yande.re-Info.plist";
@@ -542,6 +564,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "yande.re/yande.re-Prefix.pch";
 				INFOPLIST_FILE = "yande.re/yande.re-Info.plist";
