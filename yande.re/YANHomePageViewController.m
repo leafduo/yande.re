@@ -22,18 +22,15 @@
 
 @end
 
-@implementation YANHomePageViewController {
-    NSArray *_imageURLArray;
-}
+@implementation YANHomePageViewController
 
 - (void)awakeFromNib {
     self.postModel = [[YANPostModel alloc] init];
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl.tintColor = [UIColor whiteColor];
     [self.refreshControl addTarget:self
@@ -49,11 +46,12 @@
     [[self.postModel refreshData] subscribeError:^(NSError *error) {
         self.loadingData = NO;
         [self.refreshControl endRefreshing];
-    } completed:^{
-        self.loadingData = NO;
-        [self.collectionView reloadData];
-        [self.refreshControl endRefreshing];
-    }];
+    }
+        completed:^{
+            self.loadingData = NO;
+            [self.collectionView reloadData];
+            [self.refreshControl endRefreshing];
+        }];
 }
 
 - (IBAction)loadMoreData:(id)sender {
@@ -61,7 +59,7 @@
         return;
     }
     self.loadingData = YES;
-    
+
     [[self.postModel loadMoreData] subscribeCompleted:^{
         self.loadingData = NO;
         [self.collectionView reloadData];
@@ -72,8 +70,7 @@
     [self refreshData:nil];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
