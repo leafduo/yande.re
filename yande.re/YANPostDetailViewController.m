@@ -37,11 +37,11 @@
         view.theme.incompletedColor = [UIColor colorWithRed:164 / 255.0
                                                       green:231 / 255.0
                                                        blue:134 / 255.0
-                                                      alpha:1.0];
+                                                      alpha:0.5];
         view.theme.completedColor = [UIColor colorWithRed:90 / 255.0
                                                     green:212 / 255.0
                                                      blue:39 / 255.0
-                                                    alpha:1.0];
+                                                    alpha:0.7];
         view.progressCounter = 1;
         view.progressTotal = 100;
         view;
