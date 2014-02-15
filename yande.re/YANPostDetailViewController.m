@@ -10,6 +10,7 @@
 #import "YANPost.h"
 #import <MDRadialProgressView.h>
 #import <MDRadialProgressTheme.h>
+#import <MDRadialProgressLabel.h>
 
 @interface YANPostDetailViewController ()
 
@@ -35,8 +36,9 @@
                     return;
                 } else {
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        self.progressView.progressTotal = expectedSize;
-                        self.progressView.progressCounter = receivedSize;
+                        self.progressView.progressTotal = 100;
+                        self.progressView.progressCounter =
+                            100 * receivedSize / expectedSize;
                     });
                 }
             }
@@ -48,11 +50,21 @@
     }];
 
     self.progressView = [[MDRadialProgressView alloc] init];
-    self.progressView.frame = CGRectMake(0, 0, 40, 40);
+    self.progressView.frame = CGRectMake(0, 0, 80, 80);
     self.progressView.center = self.imageView.center;
-    self.progressView.theme.thickness = 15;
-    self.progressView.theme.incompletedColor = [UIColor clearColor];
-    self.progressView.theme.completedColor = [UIColor orangeColor];
+    self.progressView.theme.thickness = 20;
+    self.progressView.label.hidden = YES;
+    self.progressView.theme.sliceDividerHidden = YES;
+    self.progressView.theme.incompletedColor = [UIColor colorWithRed:164 / 255.0
+                                                               green:231 / 255.0
+                                                                blue:134 / 255.0
+                                                               alpha:1.0];
+    self.progressView.theme.completedColor = [UIColor colorWithRed:90 / 255.0
+                                                             green:212 / 255.0
+                                                              blue:39 / 255.0
+                                                             alpha:1.0];
+    self.progressView.progressCounter = 1;
+    self.progressView.progressTotal = 100;
     [self.imageView addSubview:self.progressView];
 
     UITapGestureRecognizer *tapGestureRecognizer =
