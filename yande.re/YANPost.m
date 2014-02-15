@@ -15,7 +15,7 @@
         @"objectID": @"id",
         @"previewURL": @"preview_url",
         @"URL": @"jpeg_url",
-        @"sample_url": @"sampleURL"
+        @"sampleURL": @"sample_url"
     };
 }
 

@@ -24,11 +24,42 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.progressView = ({
+        MDRadialProgressView *view = [[MDRadialProgressView alloc] init];
+        view.frame = CGRectMake(0, 0, 80, 80);
+        view.center = self.imageView.center;
+        view.theme.thickness = 20;
+        view.label.hidden = YES;
+        view.theme.sliceDividerHidden = YES;
+        view.theme.incompletedColor = [UIColor colorWithRed:164 / 255.0
+                                                      green:231 / 255.0
+                                                       blue:134 / 255.0
+                                                      alpha:1.0];
+        view.theme.completedColor = [UIColor colorWithRed:90 / 255.0
+                                                    green:212 / 255.0
+                                                     blue:39 / 255.0
+                                                    alpha:1.0];
+        view.progressCounter = 1;
+        view.progressTotal = 100;
+        view;
+    });
+    [self.imageView addSubview:self.progressView];
+
+    UITapGestureRecognizer *tapGestureRecognizer =
+        [[UITapGestureRecognizer alloc] init];
+    tapGestureRecognizer.numberOfTapsRequired = 2;
+    [[tapGestureRecognizer rac_gestureSignal] subscribeNext:^(id x) {
+        [self.presentingViewController dismissViewControllerAnimated:YES
+                                                          completion:nil];
+    }];
+    [self.imageView addGestureRecognizer:tapGestureRecognizer];
+
     @weakify(self);
-    [RACObserve(self.post, URL) subscribeNext:^(NSURL *URL) {
+    [RACObserve(self, post) subscribeNext:^(YANPost *post) {
         @strongify(self);
-        [self.imageView setImageWithURL:URL
-            placeholderImage:nil
+        [self.imageView setImageWithURL:post.previewURL];
+        [self.imageView setImageWithURL:post.sampleURL
+            placeholderImage:self.imageView.image
             options:0
             progress:^(NSUInteger receivedSize, long long expectedSize) {
                 @strongify(self);
@@ -48,33 +79,6 @@
                 self.progressView.hidden = YES;
             }];
     }];
-
-    self.progressView = [[MDRadialProgressView alloc] init];
-    self.progressView.frame = CGRectMake(0, 0, 80, 80);
-    self.progressView.center = self.imageView.center;
-    self.progressView.theme.thickness = 20;
-    self.progressView.label.hidden = YES;
-    self.progressView.theme.sliceDividerHidden = YES;
-    self.progressView.theme.incompletedColor = [UIColor colorWithRed:164 / 255.0
-                                                               green:231 / 255.0
-                                                                blue:134 / 255.0
-                                                               alpha:1.0];
-    self.progressView.theme.completedColor = [UIColor colorWithRed:90 / 255.0
-                                                             green:212 / 255.0
-                                                              blue:39 / 255.0
-                                                             alpha:1.0];
-    self.progressView.progressCounter = 1;
-    self.progressView.progressTotal = 100;
-    [self.imageView addSubview:self.progressView];
-
-    UITapGestureRecognizer *tapGestureRecognizer =
-        [[UITapGestureRecognizer alloc] init];
-    tapGestureRecognizer.numberOfTapsRequired = 2;
-    [[tapGestureRecognizer rac_gestureSignal] subscribeNext:^(id x) {
-        [self.presentingViewController dismissViewControllerAnimated:YES
-                                                          completion:nil];
-    }];
-    [self.imageView addGestureRecognizer:tapGestureRecognizer];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
