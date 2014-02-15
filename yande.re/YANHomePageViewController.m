@@ -13,6 +13,7 @@
 #import <UIImageView+WebCache.h>
 #import "YANPostModel.h"
 #import "YANPost.h"
+#import "YANPostDetailViewController.h"
 
 @interface YANHomePageViewController ()
 
@@ -75,24 +76,46 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - UICollectionDataSource
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showPostDetail"]) {
+        YANPostDetailViewController *postDetailViewController =
+            segue.destinationViewController;
+        NSIndexPath *selectedIndex =
+            [[self.collectionView indexPathsForSelectedItems] firstObject];
+        YANPost *post = self.postModel.postArray[selectedIndex.item];
+        postDetailViewController.post = post;
+    }
+}
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+#pragma mark - UICollectionViewDataSource
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView
+     numberOfItemsInSection:(NSInteger)section {
     return [self.postModel.postArray count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    YANPhotoPreviewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    YANPost *post = self.postModel.postArray[indexPath.row];
+    YANPhotoPreviewCell *cell =
+        [collectionView dequeueReusableCellWithReuseIdentifier:@"cell"
+                                                  forIndexPath:indexPath];
+    YANPost *post = self.postModel.postArray[indexPath.item];
     [cell.imageView setImageWithURL:post.previewURL];
     return cell;
+}
+
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView
+    didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"showPostDetail" sender:self];
 }
 
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView.contentOffset.y + CGRectGetHeight(scrollView.frame) > scrollView.contentSize.height - 60) {
+    if (scrollView.contentOffset.y + CGRectGetHeight(scrollView.frame) >
+        scrollView.contentSize.height - 60) {
         [self loadMoreData:nil];
     }
 }

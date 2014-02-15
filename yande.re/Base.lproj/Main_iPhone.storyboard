@@ -58,10 +58,41 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="yande.re" id="bTx-Jt-sHM"/>
+                    <connections>
+                        <segue destination="KVX-f7-XaR" kind="modal" identifier="showPostDetail" id="NfH-bN-jbS"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nHS-Z2-03d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="105" y="-6"/>
+        </scene>
+        <!--Post detail-->
+        <scene sceneID="z8b-NL-4kC">
+            <objects>
+                <viewController id="KVX-f7-XaR" userLabel="Post detail" customClass="YANPostDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Pi-yn-8vP"/>
+                        <viewControllerLayoutGuide type="bottom" id="DEJ-YU-YgY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gkp-T8-f3G">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UOX-4D-11y">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="UOX-4D-11y" id="ohM-Om-1hp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1QV-OG-JyJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="627" y="-351"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

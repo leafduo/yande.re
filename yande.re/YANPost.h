@@ -12,5 +12,7 @@
 
 @property (nonatomic, assign) NSUInteger objectID;
 @property (nonatomic, strong) NSURL *previewURL;
+@property (nonatomic, strong) NSURL *sampleURL;
+@property (nonatomic, strong) NSURL *URL;
 
 @end
