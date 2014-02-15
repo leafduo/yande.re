@@ -18,7 +18,7 @@
 @property (nonatomic, strong) IBOutlet MDRadialProgressView *progressView;
 
 @property (nonatomic, strong) UITapGestureRecognizer *dismissGesture;
-@property (nonatomic, strong) UILongPressGestureRecognizer *savePhotoGesture;
+@property (nonatomic, strong) UILongPressGestureRecognizer *moreActionGesture;
 
 @end
 
@@ -59,13 +59,18 @@
     });
     [self.imageView addGestureRecognizer:self.dismissGesture];
 
-    self.savePhotoGesture = ({
+    self.moreActionGesture = ({
         UILongPressGestureRecognizer *gesture =
             [[UILongPressGestureRecognizer alloc] init];
-        [gesture addTarget:self action:@selector(savePhoto:)];
+        [[gesture rac_gestureSignal]
+            subscribeNext:^(UIPanGestureRecognizer *recognizer) {
+                if (recognizer.state == UIGestureRecognizerStateBegan) {
+                    [self showMoreActionSheet:nil];
+                }
+            }];
         gesture;
     });
-    [self.imageView addGestureRecognizer:self.savePhotoGesture];
+    [self.imageView addGestureRecognizer:self.moreActionGesture];
 
     @weakify(self);
     [RACObserve(self, post) subscribeNext:^(YANPost *post) {
@@ -115,7 +120,22 @@
 
 #pragma mark - Action
 
-- (IBAction)savePhoto:(id)sender {
+- (IBAction)showMoreActionSheet:(id)sender {
+    UIActionSheet *actionSheet =
+        [[UIActionSheet alloc] initWithTitle:nil
+                                    delegate:nil
+                           cancelButtonTitle:@"Cancel"
+                      destructiveButtonTitle:nil
+                           otherButtonTitles:@"Save Photo", nil];
+    [[actionSheet rac_buttonClickedSignal] subscribeNext:^(NSNumber *idx) {
+        if ([idx intValue] == [actionSheet firstOtherButtonIndex]) {
+            [self savePhoto];
+        }
+    }];
+    [actionSheet showInView:[[UIApplication sharedApplication] keyWindow]];
+}
+
+- (void)savePhoto {
     UIImage *image = self.imageView.image;
     UIImageWriteToSavedPhotosAlbum(image, nil, nil, NULL);
 }
