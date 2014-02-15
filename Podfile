@@ -5,6 +5,7 @@ pod 'AFNetworking'
 pod 'Mantle'
 pod 'SDWebImage'
 pod 'Reveal-iOS-SDK'
+pod 'MDRadialProgress'
 
 target 'yande.reTests' do
   pod 'Specta'

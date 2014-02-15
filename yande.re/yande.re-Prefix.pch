@@ -20,3 +20,4 @@
 #import <Mantle.h>
 #import <UIImageView+WebCache.h>
 #import <UIButton+WebCache.h>
+#import <EXTScope.h>
