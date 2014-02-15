@@ -42,6 +42,12 @@
     [self refreshData:nil];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.collectionView reloadData];
+}
+
 - (IBAction)refreshData:(id)sender {
     [self.refreshControl beginRefreshing];
     [[self.postModel refreshData] subscribeError:^(NSError *error) {
@@ -99,8 +105,7 @@
     YANPhotoPreviewCell *cell =
         [collectionView dequeueReusableCellWithReuseIdentifier:@"cell"
                                                   forIndexPath:indexPath];
-    YANPost *post = self.postModel.postArray[indexPath.item];
-    [cell.imageView setImageWithURL:post.previewURL];
+    cell.post = self.postModel.postArray[indexPath.item];
     return cell;
 }
 
@@ -115,7 +120,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (scrollView.contentOffset.y + CGRectGetHeight(scrollView.frame) >
-        scrollView.contentSize.height - 60) {
+        scrollView.contentSize.height - 120) {
         [self loadMoreData:nil];
     }
 }

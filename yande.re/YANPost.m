@@ -19,4 +19,13 @@
     };
 }
 
++ (NSValueTransformer *)JSONTransformerForKey:(NSString *)key {
+    if ([key rangeOfString:@"URL"].location != NSNotFound) {
+        return [NSValueTransformer
+            valueTransformerForName:MTLURLValueTransformerName];
+    }
+
+    return nil;
+}
+
 @end

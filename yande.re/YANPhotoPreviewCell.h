@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class YANPost;
+
 @interface YANPhotoPreviewCell : UICollectionViewCell
 
-@property (nonatomic, strong) IBOutlet UIImageView *imageView;
+@property (nonatomic, strong) YANPost *post;
 
 @end

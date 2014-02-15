@@ -7,25 +7,26 @@
 //
 
 #import "YANPhotoPreviewCell.h"
+#import "YANPost.h"
+#import <SDWebImageManager.h>
+
+@interface YANPhotoPreviewCell ()
+
+@property (nonatomic, strong) IBOutlet UIImageView *imageView;
+
+@end
 
 @implementation YANPhotoPreviewCell
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
+- (void)setPost:(YANPost *)post {
+    _post = post;
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+    if ([[SDWebImageManager sharedManager]
+            diskImageExistsForURL:_post.sampleURL]) {
+        [self.imageView setImageWithURL:_post.sampleURL];
+    } else {
+        [self.imageView setImageWithURL:_post.previewURL];
+    }
 }
-*/
 
 @end

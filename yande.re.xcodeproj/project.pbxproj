@@ -10,6 +10,7 @@
 		4B798AF000FF4F25A4ABC64D /* libPods-yande.reTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3A5E74682D4F03913F823D /* libPods-yande.reTests.a */; };
 		856ED3B783484A98BAE4FEDE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A90111F084E4ED6B52A94E0 /* libPods.a */; };
 		9211C5ED18AFD4A20021665E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9211C5EC18AFD4A20021665E /* Crashlytics.framework */; };
+		9211C5F418AFE7B30021665E /* SDImageCache+DeadLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 9211C5F318AFE7B30021665E /* SDImageCache+DeadLock.m */; };
 		927553AA18AF4E2D00DC16BA /* YANPostDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 927553A918AF4E2D00DC16BA /* YANPostDetailViewController.m */; };
 		928CCD8D18AD1E9D0072F88C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD8C18AD1E9D0072F88C /* Foundation.framework */; };
 		928CCD8F18AD1E9D0072F88C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD8E18AD1E9D0072F88C /* CoreGraphics.framework */; };
@@ -47,6 +48,8 @@
 		4A90111F084E4ED6B52A94E0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		686894194FC74795A62810CB /* Pods-yande.reTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yande.reTests.xcconfig"; path = "Pods/Pods-yande.reTests.xcconfig"; sourceTree = "<group>"; };
 		9211C5EC18AFD4A20021665E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		9211C5F218AFE7B30021665E /* SDImageCache+DeadLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDImageCache+DeadLock.h"; sourceTree = "<group>"; };
+		9211C5F318AFE7B30021665E /* SDImageCache+DeadLock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SDImageCache+DeadLock.m"; sourceTree = "<group>"; };
 		927553A818AF4E2D00DC16BA /* YANPostDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANPostDetailViewController.h; sourceTree = "<group>"; };
 		927553A918AF4E2D00DC16BA /* YANPostDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANPostDetailViewController.m; sourceTree = "<group>"; };
 		928CCD8918AD1E9D0072F88C /* yande.re.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yande.re.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +110,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9211C5F118AFE7440021665E /* Workaround */ = {
+			isa = PBXGroup;
+			children = (
+				9211C5F218AFE7B30021665E /* SDImageCache+DeadLock.h */,
+				9211C5F318AFE7B30021665E /* SDImageCache+DeadLock.m */,
+			);
+			name = Workaround;
+			sourceTree = "<group>";
+		};
 		928CCD8018AD1E9D0072F88C = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +162,7 @@
 				9299A89918AEBF110011B4D3 /* Model */,
 				9299A89A18AEBF1A0011B4D3 /* View */,
 				9299A89B18AEBF210011B4D3 /* Network */,
+				9211C5F118AFE7440021665E /* Workaround */,
 				928CCDA718AD1E9D0072F88C /* Images.xcassets */,
 				928CCD9318AD1E9D0072F88C /* Supporting Files */,
 			);
@@ -400,6 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9211C5F418AFE7B30021665E /* SDImageCache+DeadLock.m in Sources */,
 				927553AA18AF4E2D00DC16BA /* YANPostDetailViewController.m in Sources */,
 				928CCD9918AD1E9D0072F88C /* main.m in Sources */,
 				9299A89518AEA4D30011B4D3 /* YANPhotoPreviewCell.m in Sources */,
