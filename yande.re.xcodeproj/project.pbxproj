@@ -27,6 +27,7 @@
 		9299A89218AE9A6D0011B4D3 /* YANHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9299A89118AE9A6D0011B4D3 /* YANHTTPSessionManager.m */; };
 		9299A89518AEA4D30011B4D3 /* YANPhotoPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9299A89418AEA4D30011B4D3 /* YANPhotoPreviewCell.m */; };
 		9299A89818AEBB2A0011B4D3 /* YANPostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9299A89718AEBB2A0011B4D3 /* YANPostModel.m */; };
+		9299A8A318AEC9790011B4D3 /* YANPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 9299A8A218AEC9790011B4D3 /* YANPost.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		9299A89418AEA4D30011B4D3 /* YANPhotoPreviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANPhotoPreviewCell.m; sourceTree = "<group>"; };
 		9299A89618AEBB2A0011B4D3 /* YANPostModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANPostModel.h; sourceTree = "<group>"; };
 		9299A89718AEBB2A0011B4D3 /* YANPostModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANPostModel.m; sourceTree = "<group>"; };
+		9299A8A118AEC9790011B4D3 /* YANPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANPost.h; sourceTree = "<group>"; };
+		9299A8A218AEC9790011B4D3 /* YANPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANPost.m; sourceTree = "<group>"; };
 		DA7A4A42626741208DFEAA4D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,6 +183,8 @@
 			children = (
 				9299A89618AEBB2A0011B4D3 /* YANPostModel.h */,
 				9299A89718AEBB2A0011B4D3 /* YANPostModel.m */,
+				9299A8A118AEC9790011B4D3 /* YANPost.h */,
+				9299A8A218AEC9790011B4D3 /* YANPost.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -375,6 +380,7 @@
 				928CCD9918AD1E9D0072F88C /* main.m in Sources */,
 				9299A89518AEA4D30011B4D3 /* YANPhotoPreviewCell.m in Sources */,
 				9299A89818AEBB2A0011B4D3 /* YANPostModel.m in Sources */,
+				9299A8A318AEC9790011B4D3 /* YANPost.m in Sources */,
 				928CCD9D18AD1E9D0072F88C /* YANAppDelegate.m in Sources */,
 				9299A89218AE9A6D0011B4D3 /* YANHTTPSessionManager.m in Sources */,
 				9299A88E18AE92810011B4D3 /* YANHomePageViewController.m in Sources */,
@@ -513,9 +519,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "yande.re/yande.re-Prefix.pch";
 				INFOPLIST_FILE = "yande.re/yande.re-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -527,9 +535,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "yande.re/yande.re-Prefix.pch";
 				INFOPLIST_FILE = "yande.re/yande.re-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

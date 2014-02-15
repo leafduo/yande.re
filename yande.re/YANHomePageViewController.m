@@ -12,11 +12,13 @@
 #import <ReactiveCocoa.h>
 #import <UIImageView+WebCache.h>
 #import "YANPostModel.h"
+#import "YANPost.h"
 
 @interface YANHomePageViewController ()
 
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) YANPostModel *postModel;
+@property (nonatomic, assign) BOOL loadingData;
 
 @end
 
@@ -38,25 +40,36 @@
                             action:@selector(refershControlAction:)
                   forControlEvents:UIControlEventValueChanged];
     [self.collectionView addSubview:self.refreshControl];
-    
-    [self refresh:nil];
+
+    [self refreshData:nil];
 }
 
-- (IBAction)refresh:(id)sender {
+- (IBAction)refreshData:(id)sender {
     [self.refreshControl beginRefreshing];
-    [[self.postModel loadData] subscribeNext:^(id x) {
-        _imageURLArray = [[[x rac_sequence] map:^NSURL *(NSDictionary *value) {
-            return [NSURL URLWithString:value[@"preview_url"]];
-        }] array];
-        [self.collectionView reloadData];
+    [[self.postModel refreshData] subscribeError:^(NSError *error) {
+        self.loadingData = NO;
         [self.refreshControl endRefreshing];
-    } error:^(NSError *error) {
+    } completed:^{
+        self.loadingData = NO;
+        [self.collectionView reloadData];
         [self.refreshControl endRefreshing];
     }];
 }
 
+- (IBAction)loadMoreData:(id)sender {
+    if (self.loadingData) {
+        return;
+    }
+    self.loadingData = YES;
+    
+    [[self.postModel loadMoreData] subscribeCompleted:^{
+        self.loadingData = NO;
+        [self.collectionView reloadData];
+    }];
+}
+
 - (IBAction)refershControlAction:(id)sender {
-    [self refresh:nil];
+    [self refreshData:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,14 +81,23 @@
 #pragma mark - UICollectionDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [_imageURLArray count];
+    return [self.postModel.postArray count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     YANPhotoPreviewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    [cell.imageView setImageWithURL:_imageURLArray[indexPath.row]];
+    YANPost *post = self.postModel.postArray[indexPath.row];
+    [cell.imageView setImageWithURL:post.previewURL];
     return cell;
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView.contentOffset.y + CGRectGetHeight(scrollView.frame) > scrollView.contentSize.height - 60) {
+        [self loadMoreData:nil];
+    }
 }
 
 @end

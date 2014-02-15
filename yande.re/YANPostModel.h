@@ -12,6 +12,9 @@
 
 @interface YANPostModel : NSObject
 
-- (RACSignal *)loadData;
+@property (nonatomic, readonly) NSArray *postArray;
+
+- (RACSignal *)loadMoreData;
+- (RACSignal *)refreshData;
 
 @end
