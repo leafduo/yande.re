@@ -120,7 +120,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (scrollView.contentOffset.y + CGRectGetHeight(scrollView.frame) >
-        scrollView.contentSize.height - 320) {
+        scrollView.contentSize.height - 640) {
         [self loadMoreData:nil];
     }
 }

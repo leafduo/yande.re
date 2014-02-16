@@ -93,17 +93,69 @@
                                     <outlet property="delegate" destination="KVX-f7-XaR" id="8MB-Zi-xQF"/>
                                 </connections>
                             </scrollView>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lp5-hO-eUc">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="qKD-sv-P3R" kind="embed" identifier="embedInfoViewController" id="o7M-Hu-NXo"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ijH-e6-HdX" appends="YES" id="zvJ-UN-jdA"/>
+                            <outletCollection property="gestureRecognizers" destination="ikZ-JC-1Az" appends="YES" id="T90-qP-chu"/>
+                            <outletCollection property="gestureRecognizers" destination="79Z-qw-OhL" appends="YES" id="82l-v0-cGg"/>
+                            <outletCollection property="gestureRecognizers" destination="JaU-JR-LGG" appends="YES" id="f3I-x4-BlO"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="dismissGesture" destination="ijH-e6-HdX" id="nbh-QL-bHe"/>
                         <outlet property="imageView" destination="UOX-4D-11y" id="ohM-Om-1hp"/>
+                        <outlet property="infoViewControllerContainerView" destination="lp5-hO-eUc" id="BQl-ks-ccy"/>
+                        <outlet property="moreActionGesture" destination="JaU-JR-LGG" id="nHK-ea-rqj"/>
                         <outlet property="scrollView" destination="2pq-5j-x5K" id="sbo-oD-LZb"/>
+                        <outlet property="triggerInfoGesture" destination="79Z-qw-OhL" id="VoS-dd-z80"/>
+                        <outlet property="zoomingGesture" destination="ikZ-JC-1Az" id="a2G-C3-kpq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1QV-OG-JyJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="ijH-e6-HdX" userLabel="Dismiss Gesture"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="ikZ-JC-1Az" userLabel="Zooming Gesture"/>
+                <tapGestureRecognizer id="79Z-qw-OhL" userLabel="Trigger Info Gesture"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="JaU-JR-LGG" userLabel="More Action Gesture"/>
             </objects>
-            <point key="canvasLocation" x="627" y="-351"/>
+            <point key="canvasLocation" x="630" y="-328"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="2De-gN-6Is">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="qKD-sv-P3R" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ujI-gQ-Iie"/>
+                        <viewControllerLayoutGuide type="bottom" id="G0B-y4-2sj"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="98d-n9-enQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAY-Kt-dLN">
+                                <rect key="frame" x="20" y="7" width="52" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sample">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="0.70000000000000007" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hHn-BT-VXR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="988" y="196"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

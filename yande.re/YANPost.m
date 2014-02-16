@@ -12,6 +12,8 @@
 
 @property (nonatomic, assign) CGFloat sampleWidth;
 @property (nonatomic, assign) CGFloat sampleHeight;
+@property (nonatomic, assign) CGFloat jpegWidth;
+@property (nonatomic, assign) CGFloat jpegHeight;
 
 @end
 
@@ -24,7 +26,10 @@
         @"URL": @"jpeg_url",
         @"sampleURL": @"sample_url",
         @"sampleWidth": @"sample_width",
-        @"sampleHeight": @"sample_height"
+        @"sampleHeight": @"sample_height",
+        @"jpegURL": @"jpeg_url",
+        @"jpegWidth": @"jpeg_width",
+        @"jpegHeight": @"jpeg_height",
     };
 }
 
@@ -44,6 +49,15 @@
 - (void)setSampleSize:(CGSize)sampleSize {
     self.sampleWidth = sampleSize.width;
     self.sampleHeight = sampleSize.height;
+}
+
+- (CGSize)jpegSize {
+    return CGSizeMake(self.jpegWidth, self.jpegHeight);
+}
+
+- (void)setJpegSize:(CGSize)jpegSize {
+    self.jpegWidth = jpegSize.width;
+    self.jpegHeight = jpegSize.height;
 }
 
 @end

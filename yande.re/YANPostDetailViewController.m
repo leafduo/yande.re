@@ -14,13 +14,18 @@
 
 @interface YANPostDetailViewController () <UIScrollViewDelegate>
 
+@property (nonatomic, strong) IBOutlet UIView *infoViewControllerContainerView;
+@property (nonatomic, strong) UIViewController *infoViewController;
 @property (nonatomic, strong) IBOutlet UIImageView *imageView;
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) MDRadialProgressView *progressView;
 
-@property (nonatomic, strong) UISwipeGestureRecognizer *dismissGesture;
-@property (nonatomic, strong) UITapGestureRecognizer *zoomingGesture;
-@property (nonatomic, strong) UILongPressGestureRecognizer *moreActionGesture;
+@property (nonatomic, strong) IBOutlet UISwipeGestureRecognizer *dismissGesture;
+@property (nonatomic, strong) IBOutlet UITapGestureRecognizer *zoomingGesture;
+@property (nonatomic, strong)
+    IBOutlet UILongPressGestureRecognizer *moreActionGesture;
+@property (nonatomic, strong)
+    IBOutlet UITapGestureRecognizer *triggerInfoGesture;
 
 @end
 
@@ -58,51 +63,36 @@
     });
     [self.imageView addSubview:self.progressView];
 
-    self.dismissGesture = ({
-        UISwipeGestureRecognizer *gesture =
-            [[UISwipeGestureRecognizer alloc] init];
-        gesture.direction = UISwipeGestureRecognizerDirectionUp |
-                            UISwipeGestureRecognizerDirectionDown;
-        [[gesture rac_gestureSignal]
-            subscribeNext:^(UISwipeGestureRecognizer *gesture) {
-                [self.presentingViewController
-                    dismissViewControllerAnimated:YES
-                                       completion:nil];
-            }];
-        gesture;
-    });
-    [self.view addGestureRecognizer:self.dismissGesture];
+    [[self.dismissGesture rac_gestureSignal]
+        subscribeNext:^(UISwipeGestureRecognizer *gesture) {
+            [self.presentingViewController dismissViewControllerAnimated:YES
+                                                              completion:nil];
+        }];
 
-    self.zoomingGesture = ({
-        UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] init];
-        gesture.numberOfTapsRequired = 2;
-        [[gesture rac_gestureSignal] subscribeNext:^(id x) {
-            if (self.scrollView.zoomScale == self.scrollView.minimumZoomScale) {
-                CGPoint tapLocation = [gesture locationInView:self.scrollView];
-                [self.scrollView
-                    zoomToRect:CGRectMake(tapLocation.x, tapLocation.y, 0, 0)
-                      animated:YES];
-            } else {
-                [self.scrollView setZoomScale:self.scrollView.minimumZoomScale
-                                     animated:YES];
+    [[self.zoomingGesture rac_gestureSignal] subscribeNext:^(id x) {
+        if (self.scrollView.zoomScale == self.scrollView.minimumZoomScale) {
+            CGPoint tapLocation =
+                [self.zoomingGesture locationInView:self.scrollView];
+            [self.scrollView
+                zoomToRect:CGRectMake(tapLocation.x, tapLocation.y, 0, 0)
+                  animated:YES];
+        } else {
+            [self.scrollView setZoomScale:self.scrollView.minimumZoomScale
+                                 animated:YES];
+        }
+    }];
+
+    [[self.triggerInfoGesture rac_gestureSignal]
+        subscribeNext:^(id x) { [self triggerInfoViewController]; }];
+    [self.triggerInfoGesture
+        requireGestureRecognizerToFail:self.zoomingGesture];
+
+    [[self.moreActionGesture rac_gestureSignal]
+        subscribeNext:^(UIPanGestureRecognizer *recognizer) {
+            if (recognizer.state == UIGestureRecognizerStateBegan) {
+                [self showMoreActionSheet:nil];
             }
         }];
-        gesture;
-    });
-    [self.scrollView addGestureRecognizer:self.zoomingGesture];
-
-    self.moreActionGesture = ({
-        UILongPressGestureRecognizer *gesture =
-            [[UILongPressGestureRecognizer alloc] init];
-        [[gesture rac_gestureSignal]
-            subscribeNext:^(UIPanGestureRecognizer *recognizer) {
-                if (recognizer.state == UIGestureRecognizerStateBegan) {
-                    [self showMoreActionSheet:nil];
-                }
-            }];
-        gesture;
-    });
-    [self.imageView addGestureRecognizer:self.moreActionGesture];
 
     @weakify(self);
     [RACObserve(self, post) subscribeNext:^(YANPost *post) {
@@ -118,7 +108,8 @@
                 } else {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         /* MDRadialProgressView is suck.
-                         * It can't handle large progress, because it draw each
+                         * It can't handle large progress, because it draw
+                         * each
                          * count as an arc.
                          */
                         self.progressView.progressTotal = 100;
@@ -133,6 +124,17 @@
                 self.progressView.hidden = YES;
             }];
     }];
+
+    [RACObserve(self, infoViewController) subscribeNext:^(id x) {
+        @strongify(self);
+        [self triggerInfoViewController];
+    }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"embedInfoViewController"]) {
+        self.infoViewController = segue.destinationViewController;
+    }
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -179,6 +181,22 @@
 - (void)savePhoto {
     UIImage *image = self.imageView.image;
     UIImageWriteToSavedPhotosAlbum(image, nil, nil, NULL);
+}
+
+- (void)triggerInfoViewController {
+    if (self.infoViewControllerContainerView.hidden) {
+        self.infoViewControllerContainerView.hidden = NO;
+        [UIView animateWithDuration:0.25
+                         animations:^{
+                             self.infoViewControllerContainerView.alpha = 1;
+                         }];
+    } else {
+        self.infoViewControllerContainerView.hidden = YES;
+        [UIView animateWithDuration:0.25
+                         animations:^{
+                             self.infoViewControllerContainerView.alpha = 0;
+                         }];
+    }
 }
 
 @end
