@@ -216,10 +216,10 @@
 				928CCDA118AD1E9D0072F88C /* Main_iPad.storyboard */,
 				9299A88B18AE92810011B4D3 /* YANHomePageViewController.h */,
 				9299A88C18AE92810011B4D3 /* YANHomePageViewController.m */,
-				927553A818AF4E2D00DC16BA /* YANPostDetailViewController.h */,
-				927553A918AF4E2D00DC16BA /* YANPostDetailViewController.m */,
 				9299A89318AEA4D30011B4D3 /* YANPhotoPreviewCell.h */,
 				9299A89418AEA4D30011B4D3 /* YANPhotoPreviewCell.m */,
+				927553A818AF4E2D00DC16BA /* YANPostDetailViewController.h */,
+				927553A918AF4E2D00DC16BA /* YANPostDetailViewController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
