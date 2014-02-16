@@ -94,6 +94,10 @@
                     return;
                 } else {
                     dispatch_async(dispatch_get_main_queue(), ^{
+                        /* MDRadialProgressView is suck.
+                         * It can't handle large progress, because it draw each
+                         * count as an arc.
+                         */
                         self.progressView.progressTotal = 100;
                         self.progressView.progressCounter =
                             100 * receivedSize / expectedSize;
