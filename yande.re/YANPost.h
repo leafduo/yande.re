@@ -13,6 +13,7 @@
 @property (nonatomic, assign) NSUInteger objectID;
 @property (nonatomic, strong) NSURL *previewURL;
 @property (nonatomic, strong) NSURL *sampleURL;
+@property (nonatomic, assign) CGSize sampleSize;
 @property (nonatomic, strong) NSURL *URL;
 
 @end

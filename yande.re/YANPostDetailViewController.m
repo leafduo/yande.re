@@ -12,10 +12,11 @@
 #import <MDRadialProgressTheme.h>
 #import <MDRadialProgressLabel.h>
 
-@interface YANPostDetailViewController ()
+@interface YANPostDetailViewController () <UIScrollViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UIImageView *imageView;
-@property (nonatomic, strong) IBOutlet MDRadialProgressView *progressView;
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) MDRadialProgressView *progressView;
 
 @property (nonatomic, strong) UITapGestureRecognizer *dismissGesture;
 @property (nonatomic, strong) UILongPressGestureRecognizer *moreActionGesture;
@@ -26,6 +27,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.scrollView.maximumZoomScale = ({
+        CGFloat scale = [[UIScreen mainScreen] scale];
+        MAX(self.post.sampleSize.width / scale /
+                CGRectGetWidth(self.scrollView.bounds),
+            self.post.sampleSize.height / scale /
+                CGRectGetHeight(self.scrollView.bounds));
+    });
 
     self.progressView = ({
         MDRadialProgressView *view = [[MDRadialProgressView alloc] init];
@@ -118,8 +127,13 @@
     _post = post;
 }
 
-#pragma mark - Action
+#pragma mark - UIScrollViewDelegate
 
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    return self.imageView;
+}
+
+#pragma mark - Action
 - (IBAction)showMoreActionSheet:(id)sender {
     UIActionSheet *actionSheet =
         [[UIActionSheet alloc] initWithTitle:nil
