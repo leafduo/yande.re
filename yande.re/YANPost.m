@@ -33,6 +33,21 @@
     };
 }
 
+- (CGSize)sizeForResolution:(YANPostImageResolution)resolution {
+    switch (resolution) {
+    case YANPostImageResolutionSample:
+        return self.sampleSize;
+        break;
+    case YANPostImageResolutionJEPG:
+        return self.jpegSize;
+        break;
+
+    default:
+        return CGSizeZero;
+        break;
+    }
+}
+
 + (NSValueTransformer *)JSONTransformerForKey:(NSString *)key {
     if ([key rangeOfString:@"URL"].location != NSNotFound) {
         return [NSValueTransformer

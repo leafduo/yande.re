@@ -8,6 +8,13 @@
 
 #import "MTLModel.h"
 
+typedef NS_ENUM(NSUInteger, YANPostImageResolution) {
+    YANPostImageResolutionPreview,
+    YANPostImageResolutionSample,
+    YANPostImageResolutionJEPG,
+    YANPostImageResolutionOriginal
+};
+
 @interface YANPost : MTLModel <MTLJSONSerializing>
 
 @property (nonatomic, assign) NSUInteger objectID;
@@ -17,5 +24,7 @@
 @property (nonatomic, strong) NSURL *jpegURL;
 @property (nonatomic, assign) CGSize jpegSize;
 @property (nonatomic, strong) NSURL *URL;
+
+- (CGSize)sizeForResolution:(YANPostImageResolution)resolution;
 
 @end

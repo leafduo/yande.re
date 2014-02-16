@@ -8,6 +8,7 @@
 
 #import "YANPostDetailViewController.h"
 #import "YANPost.h"
+#import "YANPostDetailInfoViewController.h"
 #import <MDRadialProgressView.h>
 #import <MDRadialProgressTheme.h>
 #import <MDRadialProgressLabel.h>
@@ -15,7 +16,8 @@
 @interface YANPostDetailViewController () <UIScrollViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UIView *infoViewControllerContainerView;
-@property (nonatomic, strong) UIViewController *infoViewController;
+@property (nonatomic, strong)
+    YANPostDetailInfoViewController *infoViewController;
 @property (nonatomic, strong) IBOutlet UIImageView *imageView;
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) MDRadialProgressView *progressView;
@@ -34,13 +36,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.scrollView.maximumZoomScale = ({
-        CGFloat scale = [[UIScreen mainScreen] scale];
-        MAX(self.post.sampleSize.width / scale /
-                CGRectGetWidth(self.scrollView.bounds),
-            self.post.sampleSize.height / scale /
-                CGRectGetHeight(self.scrollView.bounds));
-    });
+    @weakify(self);
+
+    [RACObserve(self.imageView, image) subscribeNext:^(UIImage *image) {
+        @strongify(self);
+        self.scrollView.maximumZoomScale = ({
+            CGFloat scale = [[UIScreen mainScreen] scale];
+            CGSize imageSize = image.size;
+            MAX(imageSize.width / scale /
+                    CGRectGetWidth(self.scrollView.bounds),
+                imageSize.height / scale /
+                    CGRectGetHeight(self.scrollView.bounds));
+        });
+    }];
 
     self.progressView = ({
         MDRadialProgressView *view = [[MDRadialProgressView alloc] init];
@@ -61,7 +69,7 @@
         view.progressTotal = 100;
         view;
     });
-    [self.imageView addSubview:self.progressView];
+    [self.view addSubview:self.progressView];
 
     [[self.dismissGesture rac_gestureSignal]
         subscribeNext:^(UISwipeGestureRecognizer *gesture) {
@@ -94,41 +102,29 @@
             }
         }];
 
-    @weakify(self);
     [RACObserve(self, post) subscribeNext:^(YANPost *post) {
         @strongify(self);
-        [self.imageView setImageWithURL:post.previewURL];
-        [self.imageView setImageWithURL:post.sampleURL
-            placeholderImage:self.imageView.image
-            options:0
-            progress:^(NSUInteger receivedSize, long long expectedSize) {
-                @strongify(self);
-                if (expectedSize == -1) {
-                    return;
-                } else {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        /* MDRadialProgressView is suck.
-                         * It can't handle large progress, because it draw
-                         * each
-                         * count as an arc.
-                         */
-                        self.progressView.progressTotal = 100;
-                        self.progressView.progressCounter =
-                            100 * receivedSize / expectedSize;
-                    });
-                }
-            }
-            completed:^(UIImage *image, NSError *error,
-                        SDImageCacheType cacheType) {
-                @strongify(self);
-                self.progressView.hidden = YES;
-            }];
+        [self loadImageWithURL:self.post.sampleURL
+                placeholderURL:self.post.previewURL];
     }];
 
     [RACObserve(self, infoViewController) subscribeNext:^(id x) {
         @strongify(self);
         [self triggerInfoViewController];
     }];
+
+    [self.infoViewController.resolutionChanged
+        subscribeNext:^(NSNumber *resolution) {
+            switch ([resolution unsignedIntegerValue]) {
+            case YANPostImageResolutionJEPG:
+                [self loadImageWithURL:self.post.jpegURL
+                        placeholderURL:self.post.sampleURL];
+                break;
+
+            default:
+                break;
+            }
+        }];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -148,12 +144,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Property
-
-- (void)setPost:(YANPost *)post {
-    _post = post;
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -197,6 +187,37 @@
                              self.infoViewControllerContainerView.alpha = 0;
                          }];
     }
+}
+
+- (void)loadImageWithURL:(NSURL *)URL placeholderURL:(NSURL *)placeholderURL {
+    [self.imageView setImageWithURL:placeholderURL];
+    @weakify(self);
+    self.progressView.hidden = NO;
+    [self.imageView setImageWithURL:URL
+        placeholderImage:self.imageView.image
+        options:0
+        progress:^(NSUInteger receivedSize, long long expectedSize) {
+            @strongify(self);
+            if (expectedSize == -1) {
+                return;
+            } else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    /* MDRadialProgressView is suck.
+                     * It can't handle large progress, because it draw
+                     * each
+                     * count as an arc.
+                     */
+                    self.progressView.progressTotal = 100;
+                    self.progressView.progressCounter =
+                        100 * receivedSize / expectedSize;
+                });
+            }
+        }
+        completed:^(UIImage *image, NSError *error,
+                    SDImageCacheType cacheType) {
+            @strongify(self);
+            self.progressView.hidden = YES;
+        }];
 }
 
 @end
