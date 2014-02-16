@@ -79,7 +79,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2pq-5j-x5K">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2pq-5j-x5K">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
@@ -108,7 +108,11 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DEJ-YU-YgY" firstAttribute="top" secondItem="lp5-hO-eUc" secondAttribute="bottom" id="5lS-Kc-2gM"/>
+                            <constraint firstItem="DEJ-YU-YgY" firstAttribute="top" secondItem="2pq-5j-x5K" secondAttribute="bottom" id="7Ix-ET-r6i"/>
+                            <constraint firstAttribute="trailing" secondItem="2pq-5j-x5K" secondAttribute="trailing" id="GGW-pT-Uqw"/>
+                            <constraint firstItem="2pq-5j-x5K" firstAttribute="top" secondItem="gkp-T8-f3G" secondAttribute="top" id="Q7C-ak-YF8"/>
                             <constraint firstAttribute="trailing" secondItem="lp5-hO-eUc" secondAttribute="trailing" id="XSI-Xu-JIE"/>
+                            <constraint firstItem="2pq-5j-x5K" firstAttribute="leading" secondItem="gkp-T8-f3G" secondAttribute="leading" id="bAl-zx-Nyy"/>
                             <constraint firstItem="lp5-hO-eUc" firstAttribute="leading" secondItem="gkp-T8-f3G" secondAttribute="leading" id="gCt-dr-sWa"/>
                         </constraints>
                         <connections>
