@@ -135,12 +135,12 @@
     }];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
 
-    [[UIApplication sharedApplication]
-        setStatusBarHidden:YES
-             withAnimation:UIStatusBarAnimationSlide];
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
+    return UIStatusBarAnimationFade;
 }
 
 - (void)didReceiveMemoryWarning {
