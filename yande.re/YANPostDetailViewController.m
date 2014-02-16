@@ -18,7 +18,8 @@
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) MDRadialProgressView *progressView;
 
-@property (nonatomic, strong) UITapGestureRecognizer *dismissGesture;
+@property (nonatomic, strong) UISwipeGestureRecognizer *dismissGesture;
+@property (nonatomic, strong) UITapGestureRecognizer *zoomingGesture;
 @property (nonatomic, strong) UILongPressGestureRecognizer *moreActionGesture;
 
 @end
@@ -58,15 +59,37 @@
     [self.imageView addSubview:self.progressView];
 
     self.dismissGesture = ({
+        UISwipeGestureRecognizer *gesture =
+            [[UISwipeGestureRecognizer alloc] init];
+        gesture.direction = UISwipeGestureRecognizerDirectionUp |
+                            UISwipeGestureRecognizerDirectionDown;
+        [[gesture rac_gestureSignal]
+            subscribeNext:^(UISwipeGestureRecognizer *gesture) {
+                [self.presentingViewController
+                    dismissViewControllerAnimated:YES
+                                       completion:nil];
+            }];
+        gesture;
+    });
+    [self.view addGestureRecognizer:self.dismissGesture];
+
+    self.zoomingGesture = ({
         UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] init];
         gesture.numberOfTapsRequired = 2;
         [[gesture rac_gestureSignal] subscribeNext:^(id x) {
-            [self.presentingViewController dismissViewControllerAnimated:YES
-                                                              completion:nil];
+            if (self.scrollView.zoomScale == self.scrollView.minimumZoomScale) {
+                CGPoint tapLocation = [gesture locationInView:self.scrollView];
+                [self.scrollView
+                    zoomToRect:CGRectMake(tapLocation.x, tapLocation.y, 0, 0)
+                      animated:YES];
+            } else {
+                [self.scrollView setZoomScale:self.scrollView.minimumZoomScale
+                                     animated:YES];
+            }
         }];
         gesture;
     });
-    [self.imageView addGestureRecognizer:self.dismissGesture];
+    [self.scrollView addGestureRecognizer:self.zoomingGesture];
 
     self.moreActionGesture = ({
         UILongPressGestureRecognizer *gesture =
