@@ -1,0 +1,19 @@
+//
+//  yande.reTests-Prefix.pch
+//  yande.re
+//
+//  Created by Zuyang Kou on 2/23/14.
+//  Copyright (c) 2014 leafduo.com. All rights reserved.
+//
+
+#ifndef yande_re_yande_reTest_Prefix_pch
+#define yande_re_yande_reTest_Prefix_pch
+
+#import "yande.re-Prefix.pch"
+
+#import <Specta.h>
+#define EXP_SHORTHAND
+#import <Expecta.h>
+#import <OCMock.h>
+
+#endif

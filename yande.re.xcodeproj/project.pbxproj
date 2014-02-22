@@ -12,6 +12,7 @@
 		9211C5ED18AFD4A20021665E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9211C5EC18AFD4A20021665E /* Crashlytics.framework */; };
 		9211C5F418AFE7B30021665E /* SDImageCache+DeadLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 9211C5F318AFE7B30021665E /* SDImageCache+DeadLock.m */; };
 		9211C5F918B124040021665E /* YANPostDetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9211C5F818B124040021665E /* YANPostDetailInfoViewController.m */; };
+		924DE03018B92B5100AE602E /* YANPostModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 924DE02F18B92B5100AE602E /* YANPostModelSpec.m */; };
 		927553AA18AF4E2D00DC16BA /* YANPostDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 927553A918AF4E2D00DC16BA /* YANPostDetailViewController.m */; };
 		928CCD8D18AD1E9D0072F88C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD8C18AD1E9D0072F88C /* Foundation.framework */; };
 		928CCD8F18AD1E9D0072F88C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD8E18AD1E9D0072F88C /* CoreGraphics.framework */; };
@@ -26,7 +27,6 @@
 		928CCDB018AD1E9D0072F88C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD8C18AD1E9D0072F88C /* Foundation.framework */; };
 		928CCDB118AD1E9D0072F88C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD9018AD1E9D0072F88C /* UIKit.framework */; };
 		928CCDB918AD1E9D0072F88C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 928CCDB718AD1E9D0072F88C /* InfoPlist.strings */; };
-		928CCDBB18AD1E9D0072F88C /* yande_reTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 928CCDBA18AD1E9D0072F88C /* yande_reTests.m */; };
 		9299A88E18AE92810011B4D3 /* YANHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9299A88C18AE92810011B4D3 /* YANHomePageViewController.m */; };
 		9299A89218AE9A6D0011B4D3 /* YANHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9299A89118AE9A6D0011B4D3 /* YANHTTPSessionManager.m */; };
 		9299A89518AEA4D30011B4D3 /* YANPhotoPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9299A89418AEA4D30011B4D3 /* YANPhotoPreviewCell.m */; };
@@ -53,6 +53,8 @@
 		9211C5F318AFE7B30021665E /* SDImageCache+DeadLock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SDImageCache+DeadLock.m"; sourceTree = "<group>"; };
 		9211C5F718B124040021665E /* YANPostDetailInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANPostDetailInfoViewController.h; sourceTree = "<group>"; };
 		9211C5F818B124040021665E /* YANPostDetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANPostDetailInfoViewController.m; sourceTree = "<group>"; };
+		924DE02F18B92B5100AE602E /* YANPostModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANPostModelSpec.m; sourceTree = "<group>"; };
+		924DE03118B92BAB00AE602E /* yande.reTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yande.reTests-Prefix.pch"; sourceTree = "<group>"; };
 		927553A818AF4E2D00DC16BA /* YANPostDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANPostDetailViewController.h; sourceTree = "<group>"; };
 		927553A918AF4E2D00DC16BA /* YANPostDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANPostDetailViewController.m; sourceTree = "<group>"; };
 		928CCD8918AD1E9D0072F88C /* yande.re.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yande.re.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,7 +74,6 @@
 		928CCDAE18AD1E9D0072F88C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		928CCDB618AD1E9D0072F88C /* yande.reTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "yande.reTests-Info.plist"; sourceTree = "<group>"; };
 		928CCDB818AD1E9D0072F88C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		928CCDBA18AD1E9D0072F88C /* yande_reTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = yande_reTests.m; sourceTree = "<group>"; };
 		9299A88B18AE92810011B4D3 /* YANHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANHomePageViewController.h; sourceTree = "<group>"; };
 		9299A88C18AE92810011B4D3 /* YANHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANHomePageViewController.m; sourceTree = "<group>"; };
 		9299A89018AE9A6D0011B4D3 /* YANHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -186,7 +187,7 @@
 		928CCDB418AD1E9D0072F88C /* yande.reTests */ = {
 			isa = PBXGroup;
 			children = (
-				928CCDBA18AD1E9D0072F88C /* yande_reTests.m */,
+				924DE02F18B92B5100AE602E /* YANPostModelSpec.m */,
 				928CCDB518AD1E9D0072F88C /* Supporting Files */,
 			);
 			path = yande.reTests;
@@ -195,6 +196,7 @@
 		928CCDB518AD1E9D0072F88C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				924DE03118B92BAB00AE602E /* yande.reTests-Prefix.pch */,
 				928CCDB618AD1E9D0072F88C /* yande.reTests-Info.plist */,
 				928CCDB718AD1E9D0072F88C /* InfoPlist.strings */,
 			);
@@ -435,7 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				928CCDBB18AD1E9D0072F88C /* yande_reTests.m in Sources */,
+				924DE03018B92B5100AE602E /* YANPostModelSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,7 +610,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "yande.re/yande.re-Prefix.pch";
+				GCC_PREFIX_HEADER = "yande.reTests/yande.reTests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -631,7 +633,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "yande.re/yande.re-Prefix.pch";
+				GCC_PREFIX_HEADER = "yande.reTests/yande.reTests-Prefix.pch";
 				INFOPLIST_FILE = "yande.reTests/yande.reTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
