@@ -23,9 +23,15 @@
 
     if ([[SDWebImageManager sharedManager]
             diskImageExistsForURL:_post.sampleURL]) {
-        [self.imageView setImageWithURL:_post.sampleURL];
+        [self.imageView setImageWithURL:_post.sampleURL
+                       placeholderImage:nil
+                                options:SDWebImageProgressiveDownload |
+                                        SDWebImageRetryFailed];
     } else {
-        [self.imageView setImageWithURL:_post.previewURL];
+        [self.imageView setImageWithURL:_post.previewURL
+                       placeholderImage:nil
+                                options:SDWebImageProgressiveDownload |
+                                        SDWebImageRetryFailed];
     }
 }
 

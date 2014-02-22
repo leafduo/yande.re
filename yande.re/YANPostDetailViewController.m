@@ -195,7 +195,7 @@
     self.progressView.hidden = NO;
     [self.imageView setImageWithURL:URL
         placeholderImage:self.imageView.image
-        options:0
+        options:SDWebImageProgressiveDownload | SDWebImageRetryFailed
         progress:^(NSUInteger receivedSize, long long expectedSize) {
             @strongify(self);
             if (expectedSize == -1) {
