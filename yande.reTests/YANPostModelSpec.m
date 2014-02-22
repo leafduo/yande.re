@@ -35,18 +35,6 @@ describe(@"YANPostModel", ^{
             }];
         }];
     });
-
-    // How to solve this?
-    pending(@"should have no duplicated posts when load more and refresh", ^AsyncBlock {
-        RACSignal *loadMoreSignal = [model loadMoreData];
-        RACSignal *refreshSignal = [model refreshData];
-        [[RACSignal combineLatest:@[loadMoreSignal, refreshSignal]] subscribeCompleted:^{
-            expect([[[model.postArray rac_sequence] filter:^BOOL(YANPost *post) {
-                return post.objectID == [(YANPost *)[model.postArray firstObject] objectID];
-            }] array]).to.haveCountOf(1);
-            done();
-        }];
-    });
 });
 
 SpecEnd

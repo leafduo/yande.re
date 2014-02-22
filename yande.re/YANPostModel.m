@@ -31,17 +31,25 @@ static const NSUInteger kPostPerRequest = 32;
     return self;
 }
 
-- (RACSignal *)loadMoreData {
+- (RACSignal *)loadMoreDataReset:(BOOL)reset {
     NSAssert(!self.loading, @"We accept one request at a time");
     self.loading = YES;
 
     return [RACSubject createSignal:^RACDisposable * (id<RACSubscriber> subscriber) {
-        NSDictionary *params = @{ @"limit": @(kPostPerRequest), @"page": @(self.page + 1) };
+        NSDictionary *params = @{
+                                 @"limit": @(kPostPerRequest),
+                                 @"page": @(reset ? 1 : self.page + 1)
+                                };
         NSURLSessionDataTask *dataTask = [[YANHTTPSessionManager sharedManager] GET:@"/post.json"
             parameters:params
             success:^(NSURLSessionDataTask *task, NSArray *responseArray) {
                 self.loading = NO;
-                self.page++;
+
+                if (reset) {
+                    [self clearLocalData];
+                }
+
+                ++self.page;
                 for (NSDictionary *dict in responseArray) {
                     YANPost *post = [MTLJSONAdapter modelOfClass:[YANPost class] fromJSONDictionary:dict error:nil];
                     self.postArray = [self.postArray arrayByAddingObject:post];
@@ -59,8 +67,12 @@ static const NSUInteger kPostPerRequest = 32;
     }];
 }
 
+- (RACSignal *)loadMoreData {
+    return [self loadMoreDataReset:NO];
+}
+
 - (RACSignal *)refreshData {
-    return [self loadMoreData];
+    return [self loadMoreDataReset:YES];
 }
 
 - (void)clearLocalData {
