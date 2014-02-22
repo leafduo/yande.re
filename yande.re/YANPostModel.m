@@ -14,7 +14,7 @@
 
 @property (nonatomic, strong) NSArray *postArray;
 @property (nonatomic, assign) NSUInteger page;
-@property (nonatomic, strong) RACSignal *lastRequest;
+@property (nonatomic, assign, getter = isLoading) BOOL loading;
 
 @end
 
@@ -32,11 +32,15 @@ static const NSUInteger kPostPerRequest = 32;
 }
 
 - (RACSignal *)loadMoreData {
+    NSAssert(!self.loading, @"We accept one request at a time");
+    self.loading = YES;
+
     return [RACSubject createSignal:^RACDisposable * (id<RACSubscriber> subscriber) {
         NSDictionary *params = @{ @"limit": @(kPostPerRequest), @"page": @(self.page + 1) };
         NSURLSessionDataTask *dataTask = [[YANHTTPSessionManager sharedManager] GET:@"/post.json"
             parameters:params
             success:^(NSURLSessionDataTask *task, NSArray *responseArray) {
+                self.loading = NO;
                 self.page++;
                 for (NSDictionary *dict in responseArray) {
                     YANPost *post = [MTLJSONAdapter modelOfClass:[YANPost class] fromJSONDictionary:dict error:nil];
@@ -45,13 +49,17 @@ static const NSUInteger kPostPerRequest = 32;
                 }
                 [subscriber sendCompleted];
             }
-            failure:^(NSURLSessionDataTask *task, NSError *error) { [subscriber sendError:error]; }];
-        return [RACDisposable disposableWithBlock:^{ [dataTask cancel]; }];
+            failure:^(NSURLSessionDataTask *task, NSError *error) {
+                self.loading = NO;
+                [subscriber sendError:error];
+            }];
+        return [RACDisposable disposableWithBlock:^{
+            [dataTask cancel];
+        }];
     }];
 }
 
 - (RACSignal *)refreshData {
-    [self clearLocalData];
     return [self loadMoreData];
 }
 

@@ -19,7 +19,6 @@
 
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) YANPostModel *postModel;
-@property (nonatomic, assign) BOOL loadingData;
 
 @end
 
@@ -49,26 +48,26 @@
 }
 
 - (IBAction)refreshData:(id)sender {
+    if (self.postModel.loading) {
+        [self.refreshControl endRefreshing];
+        return;
+    }
+
     [self.refreshControl beginRefreshing];
     [[self.postModel refreshData] subscribeError:^(NSError *error) {
-        self.loadingData = NO;
         [self.refreshControl endRefreshing];
-    }
-        completed:^{
-            self.loadingData = NO;
-            [self.collectionView reloadData];
-            [self.refreshControl endRefreshing];
-        }];
+    } completed:^{
+        [self.collectionView reloadData];
+        [self.refreshControl endRefreshing];
+    }];
 }
 
 - (IBAction)loadMoreData:(id)sender {
-    if (self.loadingData) {
+    if (self.postModel.loading) {
         return;
     }
-    self.loadingData = YES;
 
     [[self.postModel loadMoreData] subscribeCompleted:^{
-        self.loadingData = NO;
         [self.collectionView reloadData];
     }];
 }
@@ -119,6 +118,10 @@
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (![_postModel.postArray count]) {
+        return;
+    }
+    
     if (scrollView.contentOffset.y + CGRectGetHeight(scrollView.frame) >
         scrollView.contentSize.height - 640) {
         [self loadMoreData:nil];
