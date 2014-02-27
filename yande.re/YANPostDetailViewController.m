@@ -73,11 +73,13 @@
 
     [[self.dismissGesture rac_gestureSignal]
         subscribeNext:^(UISwipeGestureRecognizer *gesture) {
+            @strongify(self);
             [self.presentingViewController dismissViewControllerAnimated:YES
                                                               completion:nil];
         }];
 
     [[self.zoomingGesture rac_gestureSignal] subscribeNext:^(id x) {
+        @strongify(self);
         if (self.scrollView.zoomScale == self.scrollView.minimumZoomScale) {
             CGPoint tapLocation =
                 [self.zoomingGesture locationInView:self.scrollView];
@@ -91,12 +93,16 @@
     }];
 
     [[self.triggerInfoGesture rac_gestureSignal]
-        subscribeNext:^(id x) { [self triggerInfoViewController]; }];
+        subscribeNext:^(id x) {
+            @strongify(self);
+            [self triggerInfoViewController];
+        }];
     [self.triggerInfoGesture
         requireGestureRecognizerToFail:self.zoomingGesture];
 
     [[self.moreActionGesture rac_gestureSignal]
         subscribeNext:^(UIPanGestureRecognizer *recognizer) {
+            @strongify(self);
             if (recognizer.state == UIGestureRecognizerStateBegan) {
                 [self showMoreActionSheet:nil];
             }
@@ -108,13 +114,14 @@
                 placeholderURL:self.post.previewURL];
     }];
 
-    [RACObserve(self, infoViewController) subscribeNext:^(id x) {
+    [[RACObserve(self, infoViewController) take:1] subscribeNext:^(id x) {
         @strongify(self);
         [self triggerInfoViewController];
     }];
 
     [self.infoViewController.resolutionChanged
         subscribeNext:^(NSNumber *resolution) {
+            @strongify(self);
             switch ([resolution unsignedIntegerValue]) {
             case YANPostImageResolutionJEPG:
                 [self loadImageWithURL:self.post.jpegURL
@@ -134,11 +141,15 @@
 }
 
 - (BOOL)prefersStatusBarHidden {
-    return YES;
+    return self.infoViewControllerContainerView.hidden;
 }
 
 - (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
     return UIStatusBarAnimationFade;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -179,12 +190,14 @@
         [UIView animateWithDuration:0.25
                          animations:^{
                              self.infoViewControllerContainerView.alpha = 1;
+                             [self setNeedsStatusBarAppearanceUpdate];
                          }];
     } else {
         self.infoViewControllerContainerView.hidden = YES;
         [UIView animateWithDuration:0.25
                          animations:^{
                              self.infoViewControllerContainerView.alpha = 0;
+                             [self setNeedsStatusBarAppearanceUpdate];
                          }];
     }
 }
