@@ -58,8 +58,7 @@
 
     self.progressView = ({
         MDRadialProgressView *view = [[MDRadialProgressView alloc] init];
-        view.frame = CGRectMake(0, 0, 80, 80);
-        view.center = self.imageView.center;
+        view.translatesAutoresizingMaskIntoConstraints = NO;
         view.theme.thickness = 20;
         view.label.hidden = YES;
         view.theme.sliceDividerHidden = YES;
@@ -76,6 +75,36 @@
         view;
     });
     [self.view addSubview:self.progressView];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.progressView
+                                                          attribute:NSLayoutAttributeCenterX
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeCenterX
+                                                         multiplier:1
+                                                           constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.progressView
+                                                          attribute:NSLayoutAttributeCenterY
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeCenterY
+                                                         multiplier:1
+                                                           constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.progressView
+                                                          attribute:NSLayoutAttributeHeight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:nil
+                                                          attribute:NSLayoutAttributeNotAnAttribute
+                                                         multiplier:1
+                                                           constant:80]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.progressView
+                                                          attribute:NSLayoutAttributeWidth
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:nil
+                                                          attribute:NSLayoutAttributeNotAnAttribute
+                                                         multiplier:1
+                                                           constant:80]];
+
+
 
     [[self.dismissGesture rac_gestureSignal]
         subscribeNext:^(UISwipeGestureRecognizer *gesture) {
