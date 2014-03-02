@@ -29,11 +29,11 @@
 @property (nonatomic, strong)
     IBOutlet UITapGestureRecognizer *triggerInfoGesture;
 
+@property (nonatomic, strong) NSMutableArray *imageConstraits;
+
 @end
 
-@implementation YANPostDetailViewController {
-    NSMutableArray *_imageConstraits;
-}
+@implementation YANPostDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -53,6 +53,7 @@
                     CGRectGetHeight(self.scrollView.bounds));
         });
         self.scrollView.zoomScale = self.scrollView.minimumZoomScale;
+        [self recalculateImageViewConstraits];
     }];
 
     self.progressView = ({
@@ -157,9 +158,12 @@
     return UIStatusBarStyleLightContent;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSMutableArray *)imageConstraits {
+    if (!_imageConstraits) {
+        _imageConstraits = [[NSMutableArray alloc] init];
+    }
+
+    return _imageConstraits;
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -169,50 +173,54 @@
 }
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView {
-    for (NSLayoutConstraint *constraint in _imageConstraits) {
-        [scrollView removeConstraint:constraint];
+    [self recalculateImageViewConstraits];
+}
+
+- (void)recalculateImageViewConstraits {
+    for (NSLayoutConstraint *constraint in self.imageConstraits) {
+        [self.scrollView removeConstraint:constraint];
     }
-    [_imageConstraits removeAllObjects];
+    [self.imageConstraits removeAllObjects];
 
 
-    if (CGRectGetHeight(self.imageView.frame) < CGRectGetHeight(scrollView.frame)) {
-        [_imageConstraits addObject:
-            [NSLayoutConstraint constraintWithItem:self.imageView
-                                         attribute:NSLayoutAttributeCenterY
-                                         relatedBy:NSLayoutRelationEqual
-                                            toItem:scrollView
-                                         attribute:NSLayoutAttributeCenterY
-                                        multiplier:1.0f
-                                          constant:0]];
+    if (CGRectGetHeight(self.imageView.frame) < CGRectGetHeight(self.scrollView.frame)) {
+        [self.imageConstraits addObject:
+         [NSLayoutConstraint constraintWithItem:self.imageView
+                                      attribute:NSLayoutAttributeCenterY
+                                      relatedBy:NSLayoutRelationEqual
+                                         toItem:self.scrollView
+                                      attribute:NSLayoutAttributeCenterY
+                                     multiplier:1.0f
+                                       constant:0]];
     } else {
         NSDictionary *views = NSDictionaryOfVariableBindings(_imageView);
-        [_imageConstraits addObjectsFromArray:
-            [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_imageView]|"
-                                                    options:0
-                                                    metrics:nil
-                                                      views:views]];
+        [self.imageConstraits addObjectsFromArray:
+         [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_imageView]|"
+                                                 options:0
+                                                 metrics:nil
+                                                   views:views]];
     }
 
-    if (CGRectGetWidth(self.imageView.frame) < CGRectGetWidth(scrollView.frame)) {
-        [_imageConstraits addObject:
+    if (CGRectGetWidth(self.imageView.frame) < CGRectGetWidth(self.scrollView.frame)) {
+        [self.imageConstraits addObject:
          [NSLayoutConstraint constraintWithItem:self.imageView
                                       attribute:NSLayoutAttributeCenterX
                                       relatedBy:NSLayoutRelationEqual
-                                         toItem:scrollView
+                                         toItem:self.scrollView
                                       attribute:NSLayoutAttributeCenterX
                                      multiplier:1.0f
                                        constant:0]];
     } else {
         NSDictionary *views = NSDictionaryOfVariableBindings(_imageView);
-        [_imageConstraits addObjectsFromArray:
+        [self.imageConstraits addObjectsFromArray:
          [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_imageView]|"
                                                  options:0
                                                  metrics:nil
                                                    views:views]];
     }
 
-    [scrollView addConstraints:_imageConstraits];
-    [scrollView setNeedsUpdateConstraints];
+    [self.scrollView addConstraints:self.imageConstraits];
+    [self.scrollView setNeedsUpdateConstraints];
 }
 
 #pragma mark - Action
