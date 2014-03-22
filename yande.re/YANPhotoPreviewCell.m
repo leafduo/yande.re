@@ -25,13 +25,11 @@
             diskImageExistsForURL:_post.sampleURL]) {
         [self.imageView setImageWithURL:_post.sampleURL
                        placeholderImage:nil
-                                options:SDWebImageProgressiveDownload |
-                                        SDWebImageRetryFailed];
+                                options:SDWebImageRetryFailed];
     } else {
         [self.imageView setImageWithURL:_post.previewURL
                        placeholderImage:nil
-                                options:SDWebImageProgressiveDownload |
-                                        SDWebImageRetryFailed];
+                                options:SDWebImageRetryFailed];
     }
 }
 

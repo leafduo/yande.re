@@ -296,30 +296,30 @@
     @weakify(self);
     self.progressView.hidden = NO;
     [self.imageView setImageWithURL:URL
-        placeholderImage:self.imageView.image
-        options:SDWebImageProgressiveDownload | SDWebImageRetryFailed
-        progress:^(NSUInteger receivedSize, long long expectedSize) {
-            @strongify(self);
-            if (expectedSize == -1) {
-                return;
-            } else {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    /* MDRadialProgressView is suck.
-                     * It can't handle large progress, because it draw
-                     * each
-                     * count as an arc.
-                     */
-                    self.progressView.progressTotal = 100;
-                    self.progressView.progressCounter =
-                        100 * receivedSize / expectedSize;
-                });
-            }
-        }
-        completed:^(UIImage *image, NSError *error,
-                    SDImageCacheType cacheType) {
-            @strongify(self);
-            self.progressView.hidden = YES;
-        }];
+                   placeholderImage:self.imageView.image
+                            options:SDWebImageRetryFailed
+                           progress:^(NSUInteger receivedSize, long long expectedSize) {
+                               @strongify(self);
+                               if (expectedSize == -1) {
+                                   return;
+                               } else {
+                                   dispatch_async(dispatch_get_main_queue(), ^{
+                                       /* MDRadialProgressView is suck.
+                                        * It can't handle large progress, because it draw
+                                        * each
+                                        * count as an arc.
+                                        */
+                                       self.progressView.progressTotal = 100;
+                                       self.progressView.progressCounter =
+                                       100 * receivedSize / expectedSize;
+                                   });
+                               }
+                           }
+                          completed:^(UIImage *image, NSError *error,
+                                      SDImageCacheType cacheType) {
+                              @strongify(self);
+                              self.progressView.hidden = YES;
+                          }];
 }
 
 @end
