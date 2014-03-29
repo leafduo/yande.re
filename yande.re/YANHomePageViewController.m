@@ -14,8 +14,9 @@
 #import "YANPostModel.h"
 #import "YANPost.h"
 #import "YANPostDetailViewController.h"
+#import <CHTCollectionViewWaterfallLayout.h>
 
-@interface YANHomePageViewController ()
+@interface YANHomePageViewController () <CHTCollectionViewDelegateWaterfallLayout>
 
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) YANPostModel *postModel;
@@ -37,6 +38,11 @@
                             action:@selector(refershControlAction:)
                   forControlEvents:UIControlEventValueChanged];
     [self.collectionView addSubview:self.refreshControl];
+
+    CHTCollectionViewWaterfallLayout *layout = (CHTCollectionViewWaterfallLayout *)self.collectionView.collectionViewLayout;
+    layout.columnCount = 2;
+    layout.minimumColumnSpacing = 2;
+    layout.minimumInteritemSpacing = 2;
 
     [self refreshData:nil];
 }
@@ -113,6 +119,15 @@
 - (void)collectionView:(UICollectionView *)collectionView
     didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [self performSegueWithIdentifier:@"showPostDetail" sender:self];
+}
+
+#pragma mark - CHTCollectionViewDelegateWaterfallLayout
+
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    YANPost *post = self.postModel.postArray[indexPath.item];
+    return post.sampleSize;
 }
 
 #pragma mark - UIScrollViewDelegate

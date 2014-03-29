@@ -6,6 +6,7 @@ pod 'Mantle'
 pod 'SDWebImage'
 pod 'Reveal-iOS-SDK'
 pod 'MDRadialProgress', '~>1.0.4'
+pod 'CHTCollectionViewWaterfallLayout'
 
 target 'yande.reTests' do
   pod 'Specta'
