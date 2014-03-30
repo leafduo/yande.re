@@ -102,12 +102,6 @@
 #define COCOAPODS_VERSION_MINOR_ReactiveCocoa_no_arc 2
 #define COCOAPODS_VERSION_PATCH_ReactiveCocoa_no_arc 3
 
-// Reveal-iOS-SDK
-#define COCOAPODS_POD_AVAILABLE_Reveal_iOS_SDK
-#define COCOAPODS_VERSION_MAJOR_Reveal_iOS_SDK 1
-#define COCOAPODS_VERSION_MINOR_Reveal_iOS_SDK 0
-#define COCOAPODS_VERSION_PATCH_Reveal_iOS_SDK 3
-
 // SDWebImage
 #define COCOAPODS_POD_AVAILABLE_SDWebImage
 #define COCOAPODS_VERSION_MAJOR_SDWebImage 3

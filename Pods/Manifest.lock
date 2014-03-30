@@ -30,7 +30,6 @@ PODS:
   - ReactiveCocoa/Core (2.2.3):
     - ReactiveCocoa/no-arc
   - ReactiveCocoa/no-arc (2.2.3)
-  - Reveal-iOS-SDK (1.0.3)
   - SDWebImage (3.5.2):
     - SDWebImage/Core
   - SDWebImage/Core (3.5.2)
@@ -44,7 +43,6 @@ DEPENDENCIES:
   - MDRadialProgress (~> 1.0.4)
   - OCMock
   - ReactiveCocoa
-  - Reveal-iOS-SDK
   - SDWebImage
   - Specta
 
@@ -56,8 +54,7 @@ SPEC CHECKSUMS:
   MDRadialProgress: 76a08c76ecdcadcad74df0dc54fefd130e90b70c
   OCMock: 74e4ddbcef134170dcc844f91c691f13868075d7
   ReactiveCocoa: b3cb6ebd50f1a0f2e39c6fd7ce3c428b6efcb22b
-  Reveal-iOS-SDK: f2525cb560a564fdc086316e89ec45ced6977fd3
   SDWebImage: fe7ce01ae4e0a884d168f59c9dd82d35baf8429e
   Specta: 2d06220591110c6d9757d8be8ecf8e63aa40dc2a
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.30.0
