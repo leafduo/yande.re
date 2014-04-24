@@ -49,12 +49,12 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
   CHTCollectionViewWaterfallLayout: accc91bfcd82710e44025d48961b79473d84375a
-  Expecta: dbc4a27fabb853bdd2e907e33f11ee43a9a47d0c
+  Expecta: 2434bb2e2b3b1814280ec5d9a11359433d035975
   Mantle: abc3b0c81bc66eb624cf9cebb8640e377d5a44ae
   MDRadialProgress: 76a08c76ecdcadcad74df0dc54fefd130e90b70c
-  OCMock: 74e4ddbcef134170dcc844f91c691f13868075d7
+  OCMock: ea7fe30ee99e4e3186ad47d032a301fa7e8793ec
   ReactiveCocoa: b3cb6ebd50f1a0f2e39c6fd7ce3c428b6efcb22b
   SDWebImage: fe7ce01ae4e0a884d168f59c9dd82d35baf8429e
   Specta: 2d06220591110c6d9757d8be8ecf8e63aa40dc2a
 
-COCOAPODS: 0.30.0
+COCOAPODS: 0.32.1
