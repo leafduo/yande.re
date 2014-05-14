@@ -1,0 +1,1 @@
+PODS_YANDE_RE_MASONRY_OTHER_LDFLAGS = -framework Foundation -framework UIKit

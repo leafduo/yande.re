@@ -5,7 +5,8 @@ target 'yande.re' do
   pod 'AFNetworking'
   pod 'Mantle'
   pod 'SDWebImage'
-  pod 'MDRadialProgress', '~>1.0.4'
+  pod 'Masonry', '~> 0.5.0'
+  pod 'MDRadialProgress', '~> 1.0.4'
   pod 'CHTCollectionViewWaterfallLayout'
 end
 
