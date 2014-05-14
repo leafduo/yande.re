@@ -298,7 +298,7 @@
     [self.imageView setImageWithURL:URL
                    placeholderImage:self.imageView.image
                             options:SDWebImageRetryFailed
-                           progress:^(NSUInteger receivedSize, long long expectedSize) {
+                           progress:^(NSInteger receivedSize, NSInteger expectedSize) {
                                @strongify(self);
                                if (expectedSize == -1) {
                                    return;
