@@ -35,26 +35,9 @@
 
 @implementation YANPostDetailViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    _imageConstraits = [[NSMutableArray alloc] init];
-
-    @weakify(self);
-
-    [RACObserve(self.imageView, image) subscribeNext:^(UIImage *image) {
-        @strongify(self);
-        self.scrollView.maximumZoomScale = 1;
-        self.scrollView.minimumZoomScale = ({
-            CGSize imageSize = [self.imageView intrinsicContentSize];
-            1. / MAX(imageSize.width /
-                    CGRectGetWidth(self.scrollView.bounds),
-                imageSize.height /
-                    CGRectGetHeight(self.scrollView.bounds));
-        });
-        self.scrollView.zoomScale = self.scrollView.minimumZoomScale;
-        [self recalculateImageViewConstraits];
-    }];
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
 
     self.progressView = ({
         MDRadialProgressView *view = [[MDRadialProgressView alloc] init];
@@ -75,36 +58,37 @@
         view;
     });
     [self.view addSubview:self.progressView];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.progressView
-                                                          attribute:NSLayoutAttributeCenterX
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeCenterX
-                                                         multiplier:1
-                                                           constant:0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.progressView
-                                                          attribute:NSLayoutAttributeCenterY
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeCenterY
-                                                         multiplier:1
-                                                           constant:0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.progressView
-                                                          attribute:NSLayoutAttributeHeight
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:nil
-                                                          attribute:NSLayoutAttributeNotAnAttribute
-                                                         multiplier:1
-                                                           constant:80]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.progressView
-                                                          attribute:NSLayoutAttributeWidth
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:nil
-                                                          attribute:NSLayoutAttributeNotAnAttribute
-                                                         multiplier:1
-                                                           constant:80]];
+}
 
+- (void)updateViewConstraints
+{
+    [super updateViewConstraints];
 
+    [self.progressView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+        make.size.equalTo(@80);
+    }];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    _imageConstraits = [[NSMutableArray alloc] init];
+
+    @weakify(self);
+
+    [RACObserve(self.imageView, image) subscribeNext:^(UIImage *image) {
+        @strongify(self);
+        self.scrollView.maximumZoomScale = 1;
+        self.scrollView.minimumZoomScale = ({
+            CGSize imageSize = [self.imageView intrinsicContentSize];
+            1. / MAX(imageSize.width /
+                    CGRectGetWidth(self.scrollView.bounds),
+                imageSize.height /
+                    CGRectGetHeight(self.scrollView.bounds));
+        });
+        self.scrollView.zoomScale = self.scrollView.minimumZoomScale;
+    }];
 
     [[self.dismissGesture rac_gestureSignal]
         subscribeNext:^(UISwipeGestureRecognizer *gesture) {
@@ -199,57 +183,6 @@
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     return self.imageView;
-}
-
-- (void)scrollViewDidZoom:(UIScrollView *)scrollView {
-    [self recalculateImageViewConstraits];
-}
-
-- (void)recalculateImageViewConstraits {
-    for (NSLayoutConstraint *constraint in self.imageConstraits) {
-        [self.scrollView removeConstraint:constraint];
-    }
-    [self.imageConstraits removeAllObjects];
-
-
-    if (CGRectGetHeight(self.imageView.frame) < CGRectGetHeight(self.scrollView.frame)) {
-        [self.imageConstraits addObject:
-         [NSLayoutConstraint constraintWithItem:self.imageView
-                                      attribute:NSLayoutAttributeCenterY
-                                      relatedBy:NSLayoutRelationEqual
-                                         toItem:self.scrollView
-                                      attribute:NSLayoutAttributeCenterY
-                                     multiplier:1.0f
-                                       constant:0]];
-    } else {
-        NSDictionary *views = NSDictionaryOfVariableBindings(_imageView);
-        [self.imageConstraits addObjectsFromArray:
-         [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_imageView]|"
-                                                 options:0
-                                                 metrics:nil
-                                                   views:views]];
-    }
-
-    if (CGRectGetWidth(self.imageView.frame) < CGRectGetWidth(self.scrollView.frame)) {
-        [self.imageConstraits addObject:
-         [NSLayoutConstraint constraintWithItem:self.imageView
-                                      attribute:NSLayoutAttributeCenterX
-                                      relatedBy:NSLayoutRelationEqual
-                                         toItem:self.scrollView
-                                      attribute:NSLayoutAttributeCenterX
-                                     multiplier:1.0f
-                                       constant:0]];
-    } else {
-        NSDictionary *views = NSDictionaryOfVariableBindings(_imageView);
-        [self.imageConstraits addObjectsFromArray:
-         [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_imageView]|"
-                                                 options:0
-                                                 metrics:nil
-                                                   views:views]];
-    }
-
-    [self.scrollView addConstraints:self.imageConstraits];
-    [self.scrollView setNeedsUpdateConstraints];
 }
 
 #pragma mark - Action

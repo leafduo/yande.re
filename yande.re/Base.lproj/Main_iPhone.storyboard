@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="gOz-pm-4Af">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="gOz-pm-4Af">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -84,19 +84,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="500" verticalHuggingPriority="500" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="UOX-4D-11y">
+                                    <imageView contentMode="center" horizontalHuggingPriority="500" verticalHuggingPriority="500" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="568" translatesAutoresizingMaskIntoConstraints="NO" id="UOX-4D-11y">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="UOX-4D-11y" secondAttribute="centerX" priority="1" placeholder="YES" id="AeM-pb-bpf"/>
-                                    <constraint firstItem="UOX-4D-11y" firstAttribute="leading" secondItem="2pq-5j-x5K" secondAttribute="leading" placeholder="YES" id="G9n-9x-uLa"/>
-                                    <constraint firstAttribute="bottom" secondItem="UOX-4D-11y" secondAttribute="bottom" placeholder="YES" id="Shu-WD-982"/>
-                                    <constraint firstItem="UOX-4D-11y" firstAttribute="top" secondItem="2pq-5j-x5K" secondAttribute="top" placeholder="YES" id="VDO-cH-K7O"/>
-                                    <constraint firstAttribute="centerY" secondItem="UOX-4D-11y" secondAttribute="centerY" priority="1" placeholder="YES" id="sJL-uW-CNl"/>
-                                    <constraint firstAttribute="trailing" secondItem="UOX-4D-11y" secondAttribute="trailing" placeholder="YES" id="zzC-gW-Ydn"/>
+                                    <constraint firstItem="UOX-4D-11y" firstAttribute="leading" secondItem="2pq-5j-x5K" secondAttribute="leading" id="G9n-9x-uLa"/>
+                                    <constraint firstAttribute="bottom" secondItem="UOX-4D-11y" secondAttribute="bottom" id="Shu-WD-982"/>
+                                    <constraint firstItem="UOX-4D-11y" firstAttribute="top" secondItem="2pq-5j-x5K" secondAttribute="top" id="VDO-cH-K7O"/>
+                                    <constraint firstItem="UOX-4D-11y" firstAttribute="width" relation="greaterThanOrEqual" secondItem="2pq-5j-x5K" secondAttribute="width" id="kAQ-pt-3vI" userLabel="Greater Widths - (≥) - Image View - Scroll View"/>
+                                    <constraint firstItem="UOX-4D-11y" firstAttribute="height" relation="greaterThanOrEqual" secondItem="2pq-5j-x5K" secondAttribute="height" id="m12-RR-Gkh" userLabel="Greater Heights - (≥) - Image View - Scroll View"/>
+                                    <constraint firstAttribute="trailing" secondItem="UOX-4D-11y" secondAttribute="trailing" id="zzC-gW-Ydn"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="KVX-f7-XaR" id="8MB-Zi-xQF"/>
