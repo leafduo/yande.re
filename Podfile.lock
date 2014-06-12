@@ -19,6 +19,41 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Expecta (0.2.3)
+  - libextobjc (0.4):
+    - libextobjc/EXTADT
+    - libextobjc/EXTConcreteProtocol
+    - libextobjc/EXTKeyPathCoding
+    - libextobjc/EXTNil
+    - libextobjc/EXTSafeCategory
+    - libextobjc/EXTScope
+    - libextobjc/EXTSelectorChecking
+    - libextobjc/EXTSynthesize
+    - libextobjc/NSInvocation+EXT
+    - libextobjc/NSMethodSignature+EXT
+    - libextobjc/RuntimeExtensions
+    - libextobjc/UmbrellaHeader
+  - libextobjc/EXTADT (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTConcreteProtocol (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTKeyPathCoding (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTNil (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSafeCategory (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTScope (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSelectorChecking (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSynthesize (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/NSInvocation+EXT (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/NSMethodSignature+EXT (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/RuntimeExtensions (0.4)
+  - libextobjc/UmbrellaHeader (0.4)
   - Mantle (1.4.1):
     - Mantle/extobjc
   - Mantle/extobjc (1.4.1)
@@ -32,7 +67,9 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.2.4)
   - Expecta
+  - libextobjc
   - Mantle (~> 1.4.1)
+  - Masonry
   - Masonry (~> 0.5.0)
   - OCMock
   - SDWebImage (from `https://github.com/rs/SDWebImage.git`, commit `3b32f1dd9df5c7eba813d7a955577ae9b2d578a0`)
@@ -46,6 +83,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: ab63e259fe91eef4519b371ef0a4955af0e73e64
   Expecta: 578e0c29df79a96a159187599e2def686ef6a66c
+  libextobjc: ba42e4111f433273a886cd54f0ddaddb7f62f82f
   Mantle: 1ca9c0fa84d3d3fc98524e7229f30489b6dd44e5
   Masonry: eb26a0073a2c4b0df533c39fd623fb11d79a1bd9
   OCMock: 807b6904818c42b86f42f36352ce7615b816e61a

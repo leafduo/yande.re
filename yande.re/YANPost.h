@@ -18,13 +18,13 @@ typedef NS_ENUM(NSUInteger, YANPostImageResolution) {
 
 @interface YANPost : MTLModel <MTLJSONSerializing>
 
-@property (nonatomic, assign) NSUInteger objectID;
-@property (nonatomic, strong) NSURL *previewURL;
-@property (nonatomic, strong) NSURL *sampleURL;
-@property (nonatomic, assign) CGSize sampleSize;
-@property (nonatomic, strong) NSURL *jpegURL;
-@property (nonatomic, assign) CGSize jpegSize;
-@property (nonatomic, strong) NSURL *URL;
+@property (nonatomic, readonly) NSUInteger objectID;
+@property (nonatomic, readonly) NSURL *previewURL;
+@property (nonatomic, readonly) CGSize previewSize;
+@property (nonatomic, readonly) NSURL *sampleURL;
+@property (nonatomic, readonly) CGSize sampleSize;
+@property (nonatomic, readonly) NSURL *jpegURL;
+@property (nonatomic, readonly) CGSize jpegSize;
 
 - (CGSize)sizeForResolution:(YANPostImageResolution)resolution;
 

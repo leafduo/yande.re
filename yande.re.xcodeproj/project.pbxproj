@@ -28,6 +28,7 @@
 		9299A8A318AEC9790011B4D3 /* YANPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 9299A8A218AEC9790011B4D3 /* YANPost.m */; };
 		92CCE7031944D57000E2FD94 /* PostListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CCE7021944D57000E2FD94 /* PostListTableViewController.swift */; };
 		92CCE7051944D89200E2FD94 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CCE7041944D89200E2FD94 /* PostModel.swift */; };
+		92DC48981949EF6E00FC961C /* PostListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DC48971949EF6E00FC961C /* PostListTableViewCell.swift */; };
 		AFABCA77BFE6455FB017F487 /* libPods-yande.re.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF3A6DFA56B4FFCB29C07C0 /* libPods-yande.re.a */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		92CCE7011944D56F00E2FD94 /* yande.re-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yande.re-Bridging-Header.h"; sourceTree = "<group>"; };
 		92CCE7021944D57000E2FD94 /* PostListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListTableViewController.swift; sourceTree = "<group>"; };
 		92CCE7041944D89200E2FD94 /* PostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		92DC48971949EF6E00FC961C /* PostListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListTableViewCell.swift; sourceTree = "<group>"; };
 		BBF3A6DFA56B4FFCB29C07C0 /* libPods-yande.re.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-yande.re.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -212,6 +214,7 @@
 				928CCD9E18AD1E9D0072F88C /* Main_iPhone.storyboard */,
 				928CCDA118AD1E9D0072F88C /* Main_iPad.storyboard */,
 				92CCE7021944D57000E2FD94 /* PostListTableViewController.swift */,
+				92DC48971949EF6E00FC961C /* PostListTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				9211C5F418AFE7B30021665E /* SDImageCache+DeadLock.m in Sources */,
 				928CCD9918AD1E9D0072F88C /* main.m in Sources */,
 				9299A8A318AEC9790011B4D3 /* YANPost.m in Sources */,
+				92DC48981949EF6E00FC961C /* PostListTableViewCell.swift in Sources */,
 				92CCE7051944D89200E2FD94 /* PostModel.swift in Sources */,
 				92CCE7031944D57000E2FD94 /* PostListTableViewController.swift in Sources */,
 				928CCD9D18AD1E9D0072F88C /* YANAppDelegate.m in Sources */,

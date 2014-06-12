@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="gOz-pm-4Af">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6154.17"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -23,16 +23,31 @@
         <scene sceneID="x87-MN-yGH">
             <objects>
                 <tableViewController id="Zdz-o5-Xwg" customClass="PostListTableViewController" customModule="yande_re" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="l1i-rj-S0A">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="406" sectionHeaderHeight="22" sectionFooterHeight="22" id="l1i-rj-S0A">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" id="ftC-XR-J7q">
+                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostListTableViewCell" rowHeight="406" id="ftC-XR-J7q" customClass="PostListTableViewCell" customModule="yande_re" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ftC-XR-J7q" id="Xqj-I3-KfT">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YUl-lk-A7U">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="405"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="YUl-lk-A7U" firstAttribute="top" secondItem="Xqj-I3-KfT" secondAttribute="top" id="bbQ-C1-YZO"/>
+                                        <constraint firstItem="YUl-lk-A7U" firstAttribute="leading" secondItem="Xqj-I3-KfT" secondAttribute="leading" id="kIq-bx-lxu"/>
+                                        <constraint firstAttribute="bottom" secondItem="YUl-lk-A7U" secondAttribute="bottom" id="vQ4-aA-Tha"/>
+                                        <constraint firstAttribute="trailing" secondItem="YUl-lk-A7U" secondAttribute="trailing" id="wjb-oe-93f"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="postImageView" destination="YUl-lk-A7U" id="1yb-sZ-Eoc"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

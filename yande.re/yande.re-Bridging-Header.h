@@ -5,3 +5,4 @@
 #import "YANPost.h"
 #import "YANHTTPSessionManager.h"
 #import <Mantle/Mantle.h>
+#import <SDWebImage/UIImageView+WebCache.h>
