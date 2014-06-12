@@ -18,48 +18,38 @@ PODS:
   - AFNetworking/UIKit (2.2.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - CHTCollectionViewWaterfallLayout (0.7)
   - Expecta (0.2.3)
   - Mantle (1.4.1):
     - Mantle/extobjc
   - Mantle/extobjc (1.4.1)
   - Masonry (0.5.0)
-  - MDRadialProgress (1.0.4)
   - OCMock (2.2.3)
-  - ReactiveCocoa (2.3):
-    - ReactiveCocoa/UI
-  - ReactiveCocoa/Core (2.3):
-    - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.3)
-  - ReactiveCocoa/UI (2.3):
-    - ReactiveCocoa/Core
-  - SDWebImage (3.6):
+  - SDWebImage (3.6.0):
     - SDWebImage/Core
-  - SDWebImage/Core (3.6)
+  - SDWebImage/Core (3.6.0)
   - Specta (0.2.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.2.4)
-  - CHTCollectionViewWaterfallLayout (~> 0.7)
   - Expecta
   - Mantle (~> 1.4.1)
   - Masonry (~> 0.5.0)
-  - MDRadialProgress (~> 1.0.4)
   - OCMock
-  - ReactiveCocoa (~> 2.3)
-  - SDWebImage (~> 3.6)
+  - SDWebImage (from `https://github.com/rs/SDWebImage.git`, commit `3b32f1dd9df5c7eba813d7a955577ae9b2d578a0`)
   - Specta
 
-SPEC CHECKSUMS:
-  AFNetworking: 01aa7c3aa9a200b94943e54072a4373f14b3d219
-  CHTCollectionViewWaterfallLayout: a637d6271c9e8a2605bec8135d14e73e3a48288f
-  Expecta: 2434bb2e2b3b1814280ec5d9a11359433d035975
-  Mantle: 0714cdb2b8559d9e6c2410d6a8529e3307bff189
-  Masonry: bef482b29f00b33a2da916e1011af85f5d371d66
-  MDRadialProgress: 76a08c76ecdcadcad74df0dc54fefd130e90b70c
-  OCMock: ea7fe30ee99e4e3186ad47d032a301fa7e8793ec
-  ReactiveCocoa: dde7b11a14954edf789e7343b2c32e595caabd01
-  SDWebImage: 7eb273e54ca8a2e506ad9bd5e80c35b2a4d7c95e
-  Specta: 2d06220591110c6d9757d8be8ecf8e63aa40dc2a
+EXTERNAL SOURCES:
+  SDWebImage:
+    :commit: 3b32f1dd9df5c7eba813d7a955577ae9b2d578a0
+    :git: https://github.com/rs/SDWebImage.git
 
-COCOAPODS: 0.32.1
+SPEC CHECKSUMS:
+  AFNetworking: ab63e259fe91eef4519b371ef0a4955af0e73e64
+  Expecta: 578e0c29df79a96a159187599e2def686ef6a66c
+  Mantle: 1ca9c0fa84d3d3fc98524e7229f30489b6dd44e5
+  Masonry: eb26a0073a2c4b0df533c39fd623fb11d79a1bd9
+  OCMock: 807b6904818c42b86f42f36352ce7615b816e61a
+  SDWebImage: 92e95618a7a2708701c387164eaf1848f59a8c52
+  Specta: 9141310f46b1f68b676650ff2854e1ed0b74163a
+
+COCOAPODS: 0.33.1

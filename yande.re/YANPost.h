@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 leafduo.com. All rights reserved.
 //
 
-#import "MTLModel.h"
+@import UIKit;
+#import <Mantle/Mantle.h>
 
 typedef NS_ENUM(NSUInteger, YANPostImageResolution) {
     YANPostImageResolutionPreview,

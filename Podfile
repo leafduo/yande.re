@@ -1,13 +1,10 @@
 platform :ios, '7.0'
 
 target 'yande.re' do
-  pod 'ReactiveCocoa', '~> 2.3'
   pod 'AFNetworking', '~> 2.2.4'
   pod 'Mantle', '~> 1.4.1'
-  pod 'SDWebImage', '~> 3.6'
+  pod 'SDWebImage', :git => 'https://github.com/rs/SDWebImage.git', :commit => '3b32f1dd9df5c7eba813d7a955577ae9b2d578a0'
   pod 'Masonry', '~> 0.5.0'
-  pod 'MDRadialProgress', '~> 1.0.4'
-  pod 'CHTCollectionViewWaterfallLayout', '~> 0.7'
 end
 
 target 'yande.reTests' do

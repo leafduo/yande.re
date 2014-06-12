@@ -16,7 +16,6 @@
 #import <Foundation/Foundation.h>
 #endif
 
-#import <ReactiveCocoa.h>
 #import <Mantle.h>
 #import <UIImageView+WebCache.h>
 #import <UIButton+WebCache.h>
