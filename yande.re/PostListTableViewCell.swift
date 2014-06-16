@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostListTableViewCell: UITableViewCell {
+class PostListTableViewCell: UITableViewCell, UIActionSheetDelegate {
     @IBOutlet var postImageView: UIImageView
     var post: YANPost? {
     didSet {
@@ -20,6 +20,31 @@ class PostListTableViewCell: UITableViewCell {
         super.awakeFromNib()
 
         postImageView.contentMode = .ScaleAspectFit
+
+        let longPressGestureRecognizer = UILongPressGestureRecognizer()
+        self.addGestureRecognizer(longPressGestureRecognizer)
+        longPressGestureRecognizer.addTarget(self, action: "didLongPress:")
+    }
+
+    @IBAction func didLongPress(sender: UILongPressGestureRecognizer) {
+        if sender.state == .Began {
+            let actionSheet = UIActionSheet()
+            actionSheet.addButtonWithTitle("Save Photo")
+            actionSheet.addButtonWithTitle("Cancel")
+            actionSheet.cancelButtonIndex = 1
+            actionSheet.delegate = self
+            actionSheet.showInView(UIApplication.sharedApplication().keyWindow)
+        }
+    }
+
+    func actionSheet(actionSheet: UIActionSheet!, clickedButtonAtIndex buttonIndex: Int) {
+        switch buttonIndex {
+        case actionSheet.firstOtherButtonIndex:
+            let image = postImageView.image
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        default:
+            break
+        }
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

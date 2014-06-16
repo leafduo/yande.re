@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="gOz-pm-4Af">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6154.17"/>
     </dependencies>
     <scenes>
@@ -42,6 +41,7 @@
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <gestureRecognizers/>
                                     <constraints>
                                         <constraint firstItem="YUl-lk-A7U" firstAttribute="top" secondItem="Xqj-I3-KfT" secondAttribute="top" id="bbQ-C1-YZO"/>
                                         <constraint firstItem="YUl-lk-A7U" firstAttribute="leading" secondItem="Xqj-I3-KfT" secondAttribute="leading" id="kIq-bx-lxu"/>
@@ -50,6 +50,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="postImageView" destination="YUl-lk-A7U" id="1yb-sZ-Eoc"/>
                                 </connections>
