@@ -12,7 +12,7 @@ class PostListTableViewCell: UITableViewCell {
     @IBOutlet var postImageView: UIImageView
     var post: YANPost? {
     didSet {
-        postImageView.setImageWithURL(post!.sampleURL)
+        postImageView.setImageWithURL(post!.sampleURL, placeholderImage: nil, options: .RetryFailed | .ProgressiveDownload)
     }
     }
 

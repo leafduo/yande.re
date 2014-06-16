@@ -23,6 +23,7 @@ class PostModel: NSObject {
             parameters: params,
             success: { (task, response) -> () in
                 self.loading = false
+                self.page++
                 for postDict : AnyObject in (response as NSArray) {
                     let post = MTLJSONAdapter.modelOfClass(YANPost.self, fromJSONDictionary: postDict as NSDictionary, error: nil) as YANPost
                     self.posts.append(post)
