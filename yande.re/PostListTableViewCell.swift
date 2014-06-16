@@ -39,7 +39,7 @@ class PostListTableViewCell: UITableViewCell, UIActionSheetDelegate {
 
     func actionSheet(actionSheet: UIActionSheet!, clickedButtonAtIndex buttonIndex: Int) {
         switch buttonIndex {
-        case actionSheet.firstOtherButtonIndex:
+        case 0:
             let image = postImageView.image
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         default:
