@@ -11,13 +11,12 @@ import UIKit
 class PostListTableViewController: UITableViewController {
 
     let postModel = PostModel()
-    var sizingCell: PostListTableViewCell!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        sizingCell = tableView.dequeueReusableCellWithIdentifier("PostListTableViewCell") as PostListTableViewCell
-
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 120
         postModel.loadMorePost {
             self.tableView.reloadData()
         }
@@ -42,15 +41,13 @@ class PostListTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell? {
         let cell = tableView.dequeueReusableCellWithIdentifier("PostListTableViewCell", forIndexPath: indexPath) as PostListTableViewCell
-        cell.post = postModel.posts[indexPath!.row]
+        cell.post = postModel.posts[indexPath.row]
         return cell
     }
 
-    override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat  {
-        sizingCell.post = postModel.posts[indexPath.row]
-        sizingCell.layoutIfNeeded()
-        let size = sizingCell.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
-        return size.height
+    override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+        let post = postModel.posts[indexPath.row]
+        return post.jpegSize.height * 320 / post.jpegSize.width
     }
 
     /*
