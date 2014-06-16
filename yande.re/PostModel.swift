@@ -32,4 +32,11 @@ class PostModel: NSObject {
             },
             failure: nil)
     }
+
+    func reloadData(completion: () -> ()) {
+        posts = []
+        page = 0
+
+        self.loadMorePost(completion)
+    }
 }

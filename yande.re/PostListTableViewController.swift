@@ -15,9 +15,18 @@ class PostListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 120
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "reloadData", forControlEvents: .ValueChanged)
+
         postModel.loadMorePost {
+            self.tableView.reloadData()
+        }
+    }
+
+    func reloadData() {
+        refreshControl.beginRefreshing()
+        postModel.reloadData {
+            self.refreshControl.endRefreshing()
             self.tableView.reloadData()
         }
     }
