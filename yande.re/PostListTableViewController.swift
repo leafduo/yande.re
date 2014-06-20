@@ -18,9 +18,9 @@ class PostListTableViewController: UITableViewController {
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "reloadData", forControlEvents: .ValueChanged)
 
-        postModel.loadMorePost {
+        postModel.loadMorePost(completion: {
             self.tableView.reloadData()
-        }
+        })
     }
 
     func reloadData() {
@@ -65,9 +65,9 @@ class PostListTableViewController: UITableViewController {
         }
 
         if scrollView.contentOffset.y + CGRectGetHeight(scrollView.frame) > scrollView.contentSize.height - 640 {
-            self.postModel.loadMorePost {
+            self.postModel.loadMorePost(completion: {
                 self.tableView.reloadData()
-            }
+            })
         }
     }
 

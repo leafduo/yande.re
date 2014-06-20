@@ -14,14 +14,18 @@ class PostModel: NSObject {
     let limit = 20
     var page = 0
 
-    func loadMorePost(completion: () -> ()) {
+    func loadMorePost(reset: Bool = false, completion: () -> ()) {
         assert(!loading)
 
         loading = true
-        let params = ["limit": limit, "page": page + 1]
+        let params = ["limit": limit, "page": reset ? 0 : page + 1]
         YANHTTPSessionManager.sharedManager().GET("/post.json",
             parameters: params,
             success: { (task, response) -> () in
+                if reset {
+                    self.posts = []
+                    self.page = 0
+                }
                 self.loading = false
                 self.page++
                 for postDict : AnyObject in (response as NSArray) {
@@ -34,9 +38,6 @@ class PostModel: NSObject {
     }
 
     func reloadData(completion: () -> ()) {
-        posts = []
-        page = 0
-
-        self.loadMorePost(completion)
+        loadMorePost(reset: true, completion)
     }
 }
