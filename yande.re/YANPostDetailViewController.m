@@ -225,10 +225,10 @@
 }
 
 - (void)loadImageWithURL:(NSURL *)URL placeholderURL:(NSURL *)placeholderURL {
-    [self.imageView setImageWithURL:placeholderURL];
+    [self.imageView sd_setImageWithURL:placeholderURL];
     @weakify(self);
     self.progressView.hidden = NO;
-    [self.imageView setImageWithURL:URL
+    [self.imageView sd_setImageWithURL:URL
                    placeholderImage:self.imageView.image
                             options:SDWebImageRetryFailed
                            progress:^(NSInteger receivedSize, NSInteger expectedSize) {
@@ -248,8 +248,7 @@
                                    });
                                }
                            }
-                          completed:^(UIImage *image, NSError *error,
-                                      SDImageCacheType cacheType) {
+                          completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                               @strongify(self);
                               self.progressView.hidden = YES;
                           }];

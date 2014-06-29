@@ -23,11 +23,11 @@
 
     if ([[SDWebImageManager sharedManager]
             diskImageExistsForURL:_post.sampleURL]) {
-        [self.imageView setImageWithURL:_post.sampleURL
+        [self.imageView sd_setImageWithURL:_post.sampleURL
                        placeholderImage:nil
                                 options:SDWebImageRetryFailed];
     } else {
-        [self.imageView setImageWithURL:_post.previewURL
+        [self.imageView sd_setImageWithURL:_post.previewURL
                        placeholderImage:nil
                                 options:SDWebImageRetryFailed];
     }
