@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gOz-pm-4Af">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="erK-sy-RXX">
+            <objects>
+                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="gOz-pm-4Af" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SOa-FI-5al">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="EAt-W9-3bi" kind="relationship" relationship="rootViewController" id="Yae-hZ-Cwa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2rd-b9-qlx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-490.5" y="-5.915492957746479"/>
+        </scene>
+        <!--Home Page View Controller - yande.re-->
+        <scene sceneID="ytd-nY-tNY">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="EAt-W9-3bi" customClass="YANHomePageViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="x8Y-ok-Ly0">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <collectionViewLayout key="collectionViewLayout" id="Xl1-gO-Qx3" customClass="CHTCollectionViewWaterfallLayout"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="NhV-aY-nc7" customClass="YANPhotoPreviewCell">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="doG-2n-Wv6">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="0.95000000000000007" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="doG-2n-Wv6" secondAttribute="trailing" id="6vL-Vw-RFK"/>
+                                    <constraint firstItem="doG-2n-Wv6" firstAttribute="top" secondItem="NhV-aY-nc7" secondAttribute="top" id="As4-am-vrm"/>
+                                    <constraint firstAttribute="bottom" secondItem="doG-2n-Wv6" secondAttribute="bottom" id="kjk-ri-ige"/>
+                                    <constraint firstItem="doG-2n-Wv6" firstAttribute="leading" secondItem="NhV-aY-nc7" secondAttribute="leading" id="qIP-4w-dT2"/>
+                                </constraints>
+                                <size key="customSize" width="400" height="400"/>
+                                <connections>
+                                    <outlet property="imageView" destination="doG-2n-Wv6" id="B8T-fr-d7Y"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="EAt-W9-3bi" id="HpC-Yh-JNS"/>
+                            <outlet property="delegate" destination="EAt-W9-3bi" id="rEn-Wl-b7K"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="yande.re" id="bTx-Jt-sHM"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nHS-Z2-03d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117" y="-6"/>
+        </scene>
+    </scenes>
+</document>

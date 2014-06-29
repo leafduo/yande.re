@@ -13,7 +13,6 @@
 #import <UIImageView+WebCache.h>
 #import "YANPostModel.h"
 #import "YANPost.h"
-#import "YANPostDetailViewController.h"
 #import <CHTCollectionViewWaterfallLayout.h>
 
 @interface YANHomePageViewController () <CHTCollectionViewDelegateWaterfallLayout>
@@ -40,7 +39,11 @@
     [self.collectionView addSubview:self.refreshControl];
 
     CHTCollectionViewWaterfallLayout *layout = (CHTCollectionViewWaterfallLayout *)self.collectionView.collectionViewLayout;
-    layout.columnCount = 2;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        layout.columnCount = 2;
+    } else {
+        layout.columnCount = 1;
+    }
     layout.minimumColumnSpacing = 2;
     layout.minimumInteritemSpacing = 2;
 
@@ -91,17 +94,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"showPostDetail"]) {
-        YANPostDetailViewController *postDetailViewController =
-            segue.destinationViewController;
-        NSIndexPath *selectedIndex =
-            [[self.collectionView indexPathsForSelectedItems] firstObject];
-        YANPost *post = self.postModel.postArray[selectedIndex.item];
-        postDetailViewController.post = post;
-    }
-}
-
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView
@@ -116,13 +108,6 @@
                                                   forIndexPath:indexPath];
     cell.post = self.postModel.postArray[indexPath.item];
     return cell;
-}
-
-#pragma mark - UICollectionViewDelegate
-
-- (void)collectionView:(UICollectionView *)collectionView
-    didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"showPostDetail" sender:self];
 }
 
 #pragma mark - CHTCollectionViewDelegateWaterfallLayout

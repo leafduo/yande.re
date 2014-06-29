@@ -10,17 +10,14 @@
 		4B798AF000FF4F25A4ABC64D /* libPods-yande.reTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3A5E74682D4F03913F823D /* libPods-yande.reTests.a */; };
 		9211C5ED18AFD4A20021665E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9211C5EC18AFD4A20021665E /* Crashlytics.framework */; };
 		9211C5F418AFE7B30021665E /* SDImageCache+DeadLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 9211C5F318AFE7B30021665E /* SDImageCache+DeadLock.m */; };
-		9211C5F918B124040021665E /* YANPostDetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9211C5F818B124040021665E /* YANPostDetailInfoViewController.m */; };
 		924DE03018B92B5100AE602E /* YANPostModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 924DE02F18B92B5100AE602E /* YANPostModelSpec.m */; };
-		927553AA18AF4E2D00DC16BA /* YANPostDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 927553A918AF4E2D00DC16BA /* YANPostDetailViewController.m */; };
 		928CCD8D18AD1E9D0072F88C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD8C18AD1E9D0072F88C /* Foundation.framework */; };
 		928CCD8F18AD1E9D0072F88C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD8E18AD1E9D0072F88C /* CoreGraphics.framework */; };
 		928CCD9118AD1E9D0072F88C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD9018AD1E9D0072F88C /* UIKit.framework */; };
 		928CCD9718AD1E9D0072F88C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 928CCD9518AD1E9D0072F88C /* InfoPlist.strings */; };
 		928CCD9918AD1E9D0072F88C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 928CCD9818AD1E9D0072F88C /* main.m */; };
 		928CCD9D18AD1E9D0072F88C /* YANAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 928CCD9C18AD1E9D0072F88C /* YANAppDelegate.m */; };
-		928CCDA018AD1E9D0072F88C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 928CCD9E18AD1E9D0072F88C /* Main_iPhone.storyboard */; };
-		928CCDA318AD1E9D0072F88C /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 928CCDA118AD1E9D0072F88C /* Main_iPad.storyboard */; };
+		928CCDA018AD1E9D0072F88C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 928CCD9E18AD1E9D0072F88C /* Main.storyboard */; };
 		928CCDA818AD1E9D0072F88C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 928CCDA718AD1E9D0072F88C /* Images.xcassets */; };
 		928CCDAF18AD1E9D0072F88C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCDAE18AD1E9D0072F88C /* XCTest.framework */; };
 		928CCDB018AD1E9D0072F88C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD8C18AD1E9D0072F88C /* Foundation.framework */; };
@@ -52,12 +49,8 @@
 		9211C5EC18AFD4A20021665E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		9211C5F218AFE7B30021665E /* SDImageCache+DeadLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDImageCache+DeadLock.h"; sourceTree = "<group>"; };
 		9211C5F318AFE7B30021665E /* SDImageCache+DeadLock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SDImageCache+DeadLock.m"; sourceTree = "<group>"; };
-		9211C5F718B124040021665E /* YANPostDetailInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANPostDetailInfoViewController.h; sourceTree = "<group>"; };
-		9211C5F818B124040021665E /* YANPostDetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANPostDetailInfoViewController.m; sourceTree = "<group>"; };
 		924DE02F18B92B5100AE602E /* YANPostModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANPostModelSpec.m; sourceTree = "<group>"; };
 		924DE03118B92BAB00AE602E /* yande.reTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yande.reTests-Prefix.pch"; sourceTree = "<group>"; };
-		927553A818AF4E2D00DC16BA /* YANPostDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANPostDetailViewController.h; sourceTree = "<group>"; };
-		927553A918AF4E2D00DC16BA /* YANPostDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANPostDetailViewController.m; sourceTree = "<group>"; };
 		928CCD8918AD1E9D0072F88C /* yande.re.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yande.re.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		928CCD8C18AD1E9D0072F88C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		928CCD8E18AD1E9D0072F88C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -68,8 +61,7 @@
 		928CCD9A18AD1E9D0072F88C /* yande.re-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yande.re-Prefix.pch"; sourceTree = "<group>"; };
 		928CCD9B18AD1E9D0072F88C /* YANAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YANAppDelegate.h; sourceTree = "<group>"; };
 		928CCD9C18AD1E9D0072F88C /* YANAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YANAppDelegate.m; sourceTree = "<group>"; };
-		928CCD9F18AD1E9D0072F88C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		928CCDA218AD1E9D0072F88C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		928CCD9F18AD1E9D0072F88C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		928CCDA718AD1E9D0072F88C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		928CCDAD18AD1E9D0072F88C /* yande.reTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yande.reTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		928CCDAE18AD1E9D0072F88C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -219,16 +211,11 @@
 		9299A89A18AEBF1A0011B4D3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				928CCD9E18AD1E9D0072F88C /* Main_iPhone.storyboard */,
-				928CCDA118AD1E9D0072F88C /* Main_iPad.storyboard */,
+				928CCD9E18AD1E9D0072F88C /* Main.storyboard */,
 				9299A88B18AE92810011B4D3 /* YANHomePageViewController.h */,
 				9299A88C18AE92810011B4D3 /* YANHomePageViewController.m */,
 				9299A89318AEA4D30011B4D3 /* YANPhotoPreviewCell.h */,
 				9299A89418AEA4D30011B4D3 /* YANPhotoPreviewCell.m */,
-				927553A818AF4E2D00DC16BA /* YANPostDetailViewController.h */,
-				927553A918AF4E2D00DC16BA /* YANPostDetailViewController.m */,
-				9211C5F718B124040021665E /* YANPostDetailInfoViewController.h */,
-				9211C5F818B124040021665E /* YANPostDetailInfoViewController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -324,9 +311,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				928CCDA318AD1E9D0072F88C /* Main_iPad.storyboard in Resources */,
 				928CCDA818AD1E9D0072F88C /* Images.xcassets in Resources */,
-				928CCDA018AD1E9D0072F88C /* Main_iPhone.storyboard in Resources */,
+				928CCDA018AD1E9D0072F88C /* Main.storyboard in Resources */,
 				928CCD9718AD1E9D0072F88C /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,10 +409,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9211C5F418AFE7B30021665E /* SDImageCache+DeadLock.m in Sources */,
-				927553AA18AF4E2D00DC16BA /* YANPostDetailViewController.m in Sources */,
 				928CCD9918AD1E9D0072F88C /* main.m in Sources */,
 				9299A89518AEA4D30011B4D3 /* YANPhotoPreviewCell.m in Sources */,
-				9211C5F918B124040021665E /* YANPostDetailInfoViewController.m in Sources */,
 				9299A89818AEBB2A0011B4D3 /* YANPostModel.m in Sources */,
 				9299A8A318AEC9790011B4D3 /* YANPost.m in Sources */,
 				928CCD9D18AD1E9D0072F88C /* YANAppDelegate.m in Sources */,
@@ -462,20 +446,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		928CCD9E18AD1E9D0072F88C /* Main_iPhone.storyboard */ = {
+		928CCD9E18AD1E9D0072F88C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				928CCD9F18AD1E9D0072F88C /* Base */,
 			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		928CCDA118AD1E9D0072F88C /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				928CCDA218AD1E9D0072F88C /* Base */,
-			);
-			name = Main_iPad.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		928CCDB718AD1E9D0072F88C /* InfoPlist.strings */ = {
