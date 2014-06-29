@@ -13,6 +13,7 @@
 #import <UIImageView+WebCache.h>
 #import "YANPostModel.h"
 #import "YANPost.h"
+#import "YANPostDetailCollectionViewController.h"
 #import <CHTCollectionViewWaterfallLayout.h>
 
 @interface YANHomePageViewController () <CHTCollectionViewDelegateWaterfallLayout>
@@ -32,7 +33,6 @@
     [super viewDidLoad];
 
     self.refreshControl = [[UIRefreshControl alloc] init];
-    self.refreshControl.tintColor = [UIColor whiteColor];
     [self.refreshControl addTarget:self
                             action:@selector(refershControlAction:)
                   forControlEvents:UIControlEventValueChanged];
@@ -50,14 +50,15 @@
     [self refreshData:nil];
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
-}
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self.collectionView reloadData];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleDefault;
 }
 
 - (IBAction)refreshData:(id)sender {
@@ -104,7 +105,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     YANPhotoPreviewCell *cell =
-        [collectionView dequeueReusableCellWithReuseIdentifier:@"cell"
+        [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell"
                                                   forIndexPath:indexPath];
     cell.post = self.postModel.postArray[indexPath.item];
     return cell;
@@ -129,6 +130,15 @@
     if (scrollView.contentOffset.y + CGRectGetHeight(scrollView.frame) >
         scrollView.contentSize.height - 640) {
         [self loadMoreData:nil];
+    }
+}
+
+#pragma segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showDetail"]) {
+        YANPostDetailCollectionViewController *controller = segue.destinationViewController;
+        controller.postModel = self.postModel;
     }
 }
 

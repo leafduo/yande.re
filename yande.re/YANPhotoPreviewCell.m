@@ -32,7 +32,7 @@
 
     [self.imageView sd_setImageWithURL:_post.sampleURL
                       placeholderImage:nil
-                               options:SDWebImageRetryFailed];
+                               options:SDWebImageRetryFailed | SDWebImageProgressiveDownload];
 }
 
 - (UILongPressGestureRecognizer *)longPressGestureRecognizer {
