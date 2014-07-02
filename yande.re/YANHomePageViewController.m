@@ -15,6 +15,7 @@
 #import "YANPost.h"
 #import "YANPostDetailCollectionViewController.h"
 #import <CHTCollectionViewWaterfallLayout.h>
+#import <SDWebImagePrefetcher.h>
 
 @interface YANHomePageViewController () <CHTCollectionViewDelegateWaterfallLayout>
 
@@ -71,6 +72,7 @@
     [[self.postModel refreshData] subscribeError:^(NSError *error) {
         [self.refreshControl endRefreshing];
     } completed:^{
+        [self prefetchImages];
         [self.collectionView reloadData];
         [self.refreshControl endRefreshing];
     }];
@@ -82,8 +84,16 @@
     }
 
     [[self.postModel loadMoreData] subscribeCompleted:^{
+        [self prefetchImages];
         [self.collectionView reloadData];
     }];
+}
+
+- (void)prefetchImages {
+    NSArray *URLs = [[self.postModel.postArray.rac_sequence map:^NSURL *(YANPost *post) {
+        return post.sampleURL;
+    }] array];
+    [[SDWebImagePrefetcher sharedImagePrefetcher] prefetchURLs:URLs];
 }
 
 - (IBAction)refershControlAction:(id)sender {
