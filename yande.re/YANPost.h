@@ -24,6 +24,7 @@ typedef NS_ENUM(NSUInteger, YANPostImageResolution) {
 @property (nonatomic, strong) NSURL *jpegURL;
 @property (nonatomic, assign) CGSize jpegSize;
 @property (nonatomic, strong) NSURL *URL;
+@property (nonatomic, strong) NSArray *tagArray;
 
 - (CGSize)sizeForResolution:(YANPostImageResolution)resolution;
 

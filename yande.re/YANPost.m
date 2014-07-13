@@ -31,7 +31,18 @@
         @keypath(YANPost.new, jpegURL): @"jpeg_url",
         @keypath(YANPost.new, jpegWidth): @"jpeg_width",
         @keypath(YANPost.new, jpegHeight): @"jpeg_height",
+        @keypath(YANPost.new, tagArray): @"tags"
     };
+}
+
++ (NSValueTransformer *)URLJSONTransformer {
+    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
+}
+
++ (NSValueTransformer *)tagArrayJSONTransformer {
+    return [MTLValueTransformer transformerWithBlock:^NSArray *(NSString *tagString) {
+        return [tagString componentsSeparatedByString:@" "];
+    }];
 }
 
 - (CGSize)sizeForResolution:(YANPostImageResolution)resolution {
@@ -47,15 +58,6 @@
         return CGSizeZero;
         break;
     }
-}
-
-+ (NSValueTransformer *)JSONTransformerForKey:(NSString *)key {
-    if ([key rangeOfString:@"URL"].location != NSNotFound) {
-        return [NSValueTransformer
-            valueTransformerForName:MTLURLValueTransformerName];
-    }
-
-    return nil;
 }
 
 - (CGSize)sampleSize {
