@@ -22,6 +22,41 @@ PODS:
     - AFNetworking/NSURLSession
   - CHTCollectionViewWaterfallLayout (0.7)
   - Expecta (0.3.0)
+  - libextobjc (0.4):
+    - libextobjc/EXTADT
+    - libextobjc/EXTConcreteProtocol
+    - libextobjc/EXTKeyPathCoding
+    - libextobjc/EXTNil
+    - libextobjc/EXTSafeCategory
+    - libextobjc/EXTScope
+    - libextobjc/EXTSelectorChecking
+    - libextobjc/EXTSynthesize
+    - libextobjc/NSInvocation+EXT
+    - libextobjc/NSMethodSignature+EXT
+    - libextobjc/RuntimeExtensions
+    - libextobjc/UmbrellaHeader
+  - libextobjc/EXTADT (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTConcreteProtocol (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTKeyPathCoding (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTNil (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSafeCategory (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTScope (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSelectorChecking (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSynthesize (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/NSInvocation+EXT (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/NSMethodSignature+EXT (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/RuntimeExtensions (0.4)
+  - libextobjc/UmbrellaHeader (0.4)
   - Mantle (1.4.1):
     - Mantle/extobjc
   - Mantle/extobjc (1.4.1)
@@ -43,14 +78,18 @@ DEPENDENCIES:
   - AFNetworking (~> 2.3.1)
   - CHTCollectionViewWaterfallLayout (~> 0.7)
   - Expecta (~> 0.3.0)
+  - libextobjc (~> 0.4)
   - Mantle (~> 1.4.1)
-  - Masonry (~> 0.5.2)
+  - Masonry (from `https://github.com/Masonry/Masonry.git`, commit `9ab610`)
   - OCMock (~> 2.2.4)
   - ReactiveCocoa (~> 2.3.1)
   - SDWebImage (from `https://github.com/rs/SDWebImage.git`, commit `30f672`)
   - Specta (~> 0.2.1)
 
 EXTERNAL SOURCES:
+  Masonry:
+    :commit: 9ab610
+    :git: https://github.com/Masonry/Masonry.git
   SDWebImage:
     :commit: 30f672
     :git: https://github.com/rs/SDWebImage.git
@@ -59,8 +98,9 @@ SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
   CHTCollectionViewWaterfallLayout: 184d3b6d5456b48e93ac97e93e606bd8b68aedcc
   Expecta: ce8a51b9fad15a2cd573b291cb2909aaed865350
+  libextobjc: ba42e4111f433273a886cd54f0ddaddb7f62f82f
   Mantle: 1ca9c0fa84d3d3fc98524e7229f30489b6dd44e5
-  Masonry: ec0189e1a07af00913e4a1a335ea76887adc86e1
+  Masonry: aeac023b376413dedc739bf1473da5716a42b147
   OCMock: 6db79185520e24f9f299548f2b8b07e41d881bd5
   ReactiveCocoa: dca75777b9d18990c8714a3a6f2149f29b4d1462
   SDWebImage: 3cc4cfc0d0c844f7a6d216a98435acda3c178e41

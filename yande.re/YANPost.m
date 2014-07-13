@@ -7,6 +7,7 @@
 //
 
 #import "YANPost.h"
+#import <libextobjc/extobjc.h>
 
 @interface YANPost ()
 
@@ -21,15 +22,15 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
-        @"objectID": @"id",
-        @"previewURL": @"preview_url",
-        @"URL": @"jpeg_url",
-        @"sampleURL": @"sample_url",
-        @"sampleWidth": @"sample_width",
-        @"sampleHeight": @"sample_height",
-        @"jpegURL": @"jpeg_url",
-        @"jpegWidth": @"jpeg_width",
-        @"jpegHeight": @"jpeg_height",
+        @keypath(YANPost.new, objectID): @"id",
+        @keypath(YANPost.new, previewURL): @"preview_url",
+        @keypath(YANPost.new, URL): @"jpeg_url",
+        @keypath(YANPost.new, sampleURL): @"sample_url",
+        @keypath(YANPost.new, sampleWidth): @"sample_width",
+        @keypath(YANPost.new, sampleHeight): @"sample_height",
+        @keypath(YANPost.new, jpegURL): @"jpeg_url",
+        @keypath(YANPost.new, jpegWidth): @"jpeg_width",
+        @keypath(YANPost.new, jpegHeight): @"jpeg_height",
     };
 }
 
