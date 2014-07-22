@@ -5,7 +5,7 @@ target 'yande.re' do
   pod 'libextobjc', '~> 0.4'
   pod 'AFNetworking', '~> 2.3.1'
   pod 'Mantle', '~> 1.4.1'
-  pod 'SDWebImage', :git => 'https://github.com/rs/SDWebImage.git', :commit => '30f672'
+  pod 'SDWebImage', '~> 3.7.0'
   pod 'Masonry', :git => 'https://github.com/Masonry/Masonry.git', :commit => '9ab610'
   pod 'CHTCollectionViewWaterfallLayout', '~> 0.7'
 end

@@ -69,9 +69,9 @@ PODS:
   - ReactiveCocoa/no-arc (2.3.1)
   - ReactiveCocoa/UI (2.3.1):
     - ReactiveCocoa/Core
-  - SDWebImage (3.6):
+  - SDWebImage (3.7.0):
     - SDWebImage/Core
-  - SDWebImage/Core (3.6)
+  - SDWebImage/Core (3.7.0)
   - Specta (0.2.1)
 
 DEPENDENCIES:
@@ -83,16 +83,13 @@ DEPENDENCIES:
   - Masonry (from `https://github.com/Masonry/Masonry.git`, commit `9ab610`)
   - OCMock (~> 2.2.4)
   - ReactiveCocoa (~> 2.3.1)
-  - SDWebImage (from `https://github.com/rs/SDWebImage.git`, commit `30f672`)
+  - SDWebImage (~> 3.7.0)
   - Specta (~> 0.2.1)
 
 EXTERNAL SOURCES:
   Masonry:
     :commit: 9ab610
     :git: https://github.com/Masonry/Masonry.git
-  SDWebImage:
-    :commit: 30f672
-    :git: https://github.com/rs/SDWebImage.git
 
 SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
@@ -103,7 +100,7 @@ SPEC CHECKSUMS:
   Masonry: aeac023b376413dedc739bf1473da5716a42b147
   OCMock: 6db79185520e24f9f299548f2b8b07e41d881bd5
   ReactiveCocoa: dca75777b9d18990c8714a3a6f2149f29b4d1462
-  SDWebImage: 3cc4cfc0d0c844f7a6d216a98435acda3c178e41
+  SDWebImage: 791cb0f588046cb0bb7802ae8ae8f5462947b773
   Specta: 9141310f46b1f68b676650ff2854e1ed0b74163a
 
 COCOAPODS: 0.33.1
