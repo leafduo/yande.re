@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gOz-pm-4Af">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gOz-pm-4Af">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -19,15 +19,14 @@
             </objects>
             <point key="canvasLocation" x="-490.5" y="-5.915492957746479"/>
         </scene>
-        <!--Home Page View Controller - yande.re-->
+        <!--yande.re-->
         <scene sceneID="ytd-nY-tNY">
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="EAt-W9-3bi" customClass="YANHomePageViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="x8Y-ok-Ly0">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <collectionViewLayout key="collectionViewLayout" id="Xl1-gO-Qx3" customClass="CHTCollectionViewWaterfallLayout"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="NhV-aY-nc7" customClass="YANPhotoPreviewCell">
@@ -53,6 +52,7 @@
                                 <size key="customSize" width="400" height="400"/>
                                 <connections>
                                     <outlet property="imageView" destination="doG-2n-Wv6" id="B8T-fr-d7Y"/>
+                                    <outlet property="viewController" destination="EAt-W9-3bi" id="hCt-c6-ssR"/>
                                     <segue destination="xeO-xS-mwD" kind="show" identifier="showDetail" id="LYD-0f-DdV"/>
                                 </connections>
                             </collectionViewCell>
@@ -72,11 +72,10 @@
         <scene sceneID="jTC-rL-ZoB">
             <objects>
                 <collectionViewController id="xeO-xS-mwD" customClass="YANPostDetailCollectionViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" dataMode="prototypes" id="wdF-H3-9vB">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" id="wdF-H3-9vB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="VDs-bt-HZH">
                             <size key="itemSize" width="400" height="400"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>

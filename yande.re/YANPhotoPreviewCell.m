@@ -13,6 +13,7 @@
 @interface YANPhotoPreviewCell ()
 
 @property (nonatomic, weak) IBOutlet UIImageView *imageView;
+@property (nonatomic, weak) IBOutlet UIViewController *viewController;
 @property (nonatomic, readonly) UILongPressGestureRecognizer *longPressGestureRecognizer;
 
 @end
@@ -42,19 +43,27 @@
         [[_longPressGestureRecognizer rac_gestureSignal] subscribeNext:^(UILongPressGestureRecognizer *recognizer) {
             @strongify(self);
             if (recognizer.state == UIGestureRecognizerStateBegan) {
-                UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
-                                                                         delegate:nil
-                                                                cancelButtonTitle:@"Cancel"
-                                                           destructiveButtonTitle:nil
-                                                                otherButtonTitles:@"Save Photo", nil];
-                [[actionSheet rac_buttonClickedSignal] subscribeNext:^(NSNumber *idx) {
-                    @strongify(self);
-                    if ([idx intValue] == [actionSheet firstOtherButtonIndex]) {
-                        UIImage *image = self.imageView.image;
-                        UIImageWriteToSavedPhotosAlbum(image, nil, nil, NULL);
-                    }
-                }];
-                [actionSheet showInView:[[UIApplication sharedApplication] keyWindow]];
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil
+                                                                                         message:nil
+                                                                                  preferredStyle:UIAlertControllerStyleActionSheet];
+                @weakify(alertController);
+                alertController.popoverPresentationController.sourceView = self;
+                alertController.popoverPresentationController.sourceRect = self.bounds;
+                [alertController addAction:[UIAlertAction actionWithTitle:@"Save Photo"
+                                                                    style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction *action) {
+                                                                      UIImage *image = self.imageView.image;
+                                                                      UIImageWriteToSavedPhotosAlbum(image, nil, nil, NULL);
+                                                                  }]];
+                [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel"
+                                                                    style:UIAlertActionStyleCancel
+                                                                  handler:^(UIAlertAction *action) {
+                                                                      @strongify(alertController);
+                                                                      [alertController dismissViewControllerAnimated:YES completion:nil];
+                                                                  }]];
+                [self.viewController presentViewController:alertController
+                                                  animated:YES
+                                                completion:nil];
             }
         }];
     }

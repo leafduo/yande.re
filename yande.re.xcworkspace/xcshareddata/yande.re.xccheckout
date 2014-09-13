@@ -10,29 +10,29 @@
 	<string>yande.re</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>B12DEEEA-11D9-4CEF-924A-865BB7F1EDBF</key>
+		<key>04D7CC2B437563C306EB2BB0A5F53A840C3ADD6C</key>
 		<string>ssh://github.com/leafduo/yande.re.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>yande.re.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>B12DEEEA-11D9-4CEF-924A-865BB7F1EDBF</key>
+		<key>04D7CC2B437563C306EB2BB0A5F53A840C3ADD6C</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>ssh://github.com/leafduo/yande.re.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>B12DEEEA-11D9-4CEF-924A-865BB7F1EDBF</string>
+	<string>04D7CC2B437563C306EB2BB0A5F53A840C3ADD6C</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>B12DEEEA-11D9-4CEF-924A-865BB7F1EDBF</string>
+			<string>04D7CC2B437563C306EB2BB0A5F53A840C3ADD6C</string>
 			<key>IDESourceControlWCCName</key>
 			<string>yande.re</string>
 		</dict>
