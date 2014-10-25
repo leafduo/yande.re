@@ -4,11 +4,11 @@ platform :ios, '8.1'
 
 target 'yande.re' do
   pod 'ReactiveCocoa', '~> 2.3.1'
-  pod 'libextobjc', '~> 0.4'
+  pod 'libextobjc', '~> 0.4.1'
   pod 'AFNetworking', '~> 2.3.1'
   pod 'Mantle', '~> 1.4.1'
   pod 'SDWebImage', '~> 3.7.0'
-  pod 'Masonry', :git => 'https://github.com/Masonry/Masonry.git', :commit => '9ab610'
+  pod 'Masonry', '~> 0.5.3'
   pod 'CHTCollectionViewWaterfallLayout', '~> 0.7'
 end
 
