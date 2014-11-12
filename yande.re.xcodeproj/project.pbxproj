@@ -1,681 +1,1647 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		4B798AF000FF4F25A4ABC64D /* libPods-yande.reTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3A5E74682D4F03913F823D /* libPods-yande.reTests.a */; };
-		9211C5ED18AFD4A20021665E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9211C5EC18AFD4A20021665E /* Crashlytics.framework */; };
-		9211C5F418AFE7B30021665E /* SDImageCache+DeadLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 9211C5F318AFE7B30021665E /* SDImageCache+DeadLock.m */; };
-		924DE03018B92B5100AE602E /* YANPostModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 924DE02F18B92B5100AE602E /* YANPostModelSpec.m */; };
-		924E903E19608CA00090D347 /* YANPostDetailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 924E903D19608CA00090D347 /* YANPostDetailCollectionViewCell.m */; };
-		927A3CD8196083C20093D6F0 /* YANPostDetailCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 927A3CD7196083C20093D6F0 /* YANPostDetailCollectionViewController.m */; };
-		928CCD8D18AD1E9D0072F88C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD8C18AD1E9D0072F88C /* Foundation.framework */; };
-		928CCD8F18AD1E9D0072F88C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD8E18AD1E9D0072F88C /* CoreGraphics.framework */; };
-		928CCD9118AD1E9D0072F88C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD9018AD1E9D0072F88C /* UIKit.framework */; };
-		928CCD9718AD1E9D0072F88C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 928CCD9518AD1E9D0072F88C /* InfoPlist.strings */; };
-		928CCD9918AD1E9D0072F88C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 928CCD9818AD1E9D0072F88C /* main.m */; };
-		928CCD9D18AD1E9D0072F88C /* YANAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 928CCD9C18AD1E9D0072F88C /* YANAppDelegate.m */; };
-		928CCDA018AD1E9D0072F88C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 928CCD9E18AD1E9D0072F88C /* Main.storyboard */; };
-		928CCDA818AD1E9D0072F88C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 928CCDA718AD1E9D0072F88C /* Images.xcassets */; };
-		928CCDAF18AD1E9D0072F88C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCDAE18AD1E9D0072F88C /* XCTest.framework */; };
-		928CCDB018AD1E9D0072F88C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD8C18AD1E9D0072F88C /* Foundation.framework */; };
-		928CCDB118AD1E9D0072F88C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928CCD9018AD1E9D0072F88C /* UIKit.framework */; };
-		928CCDB918AD1E9D0072F88C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 928CCDB718AD1E9D0072F88C /* InfoPlist.strings */; };
-		9299A88E18AE92810011B4D3 /* YANHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9299A88C18AE92810011B4D3 /* YANHomePageViewController.m */; };
-		9299A89218AE9A6D0011B4D3 /* YANHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9299A89118AE9A6D0011B4D3 /* YANHTTPSessionManager.m */; };
-		9299A89518AEA4D30011B4D3 /* YANPhotoPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9299A89418AEA4D30011B4D3 /* YANPhotoPreviewCell.m */; };
-		9299A89818AEBB2A0011B4D3 /* YANPostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9299A89718AEBB2A0011B4D3 /* YANPostModel.m */; };
-		9299A8A318AEC9790011B4D3 /* YANPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 9299A8A218AEC9790011B4D3 /* YANPost.m */; };
-		AFABCA77BFE6455FB017F487 /* libPods-yande.re.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF3A6DFA56B4FFCB29C07C0 /* libPods-yande.re.a */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		928CCDB218AD1E9D0072F88C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 928CCD8118AD1E9D0072F88C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 928CCD8818AD1E9D0072F88C;
-			remoteInfo = yande.re;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		1B3A5E74682D4F03913F823D /* libPods-yande.reTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-yande.reTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		36430CFD0C2F4815BADDAE39 /* Pods-yande.re.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yande.re.xcconfig"; path = "Pods/Pods-yande.re.xcconfig"; sourceTree = "<group>"; };
-		4A90111F084E4ED6B52A94E0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		686894194FC74795A62810CB /* Pods-yande.reTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yande.reTests.xcconfig"; path = "Pods/Pods-yande.reTests.xcconfig"; sourceTree = "<group>"; };
-		9211C5EC18AFD4A20021665E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		9211C5F218AFE7B30021665E /* SDImageCache+DeadLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDImageCache+DeadLock.h"; sourceTree = "<group>"; };
-		9211C5F318AFE7B30021665E /* SDImageCache+DeadLock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SDImageCache+DeadLock.m"; sourceTree = "<group>"; };
-		924DE02F18B92B5100AE602E /* YANPostModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANPostModelSpec.m; sourceTree = "<group>"; };
-		924DE03118B92BAB00AE602E /* yande.reTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yande.reTests-Prefix.pch"; sourceTree = "<group>"; };
-		924E903C19608CA00090D347 /* YANPostDetailCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANPostDetailCollectionViewCell.h; sourceTree = "<group>"; };
-		924E903D19608CA00090D347 /* YANPostDetailCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANPostDetailCollectionViewCell.m; sourceTree = "<group>"; };
-		927A3CD6196083C20093D6F0 /* YANPostDetailCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANPostDetailCollectionViewController.h; sourceTree = "<group>"; };
-		927A3CD7196083C20093D6F0 /* YANPostDetailCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANPostDetailCollectionViewController.m; sourceTree = "<group>"; };
-		928CCD8918AD1E9D0072F88C /* yande.re.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yande.re.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		928CCD8C18AD1E9D0072F88C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		928CCD8E18AD1E9D0072F88C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		928CCD9018AD1E9D0072F88C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		928CCD9418AD1E9D0072F88C /* yande.re-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "yande.re-Info.plist"; sourceTree = "<group>"; };
-		928CCD9618AD1E9D0072F88C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		928CCD9818AD1E9D0072F88C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		928CCD9A18AD1E9D0072F88C /* yande.re-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yande.re-Prefix.pch"; sourceTree = "<group>"; };
-		928CCD9B18AD1E9D0072F88C /* YANAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YANAppDelegate.h; sourceTree = "<group>"; };
-		928CCD9C18AD1E9D0072F88C /* YANAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YANAppDelegate.m; sourceTree = "<group>"; };
-		928CCD9F18AD1E9D0072F88C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		928CCDA718AD1E9D0072F88C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		928CCDAD18AD1E9D0072F88C /* yande.reTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yande.reTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		928CCDAE18AD1E9D0072F88C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		928CCDB618AD1E9D0072F88C /* yande.reTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "yande.reTests-Info.plist"; sourceTree = "<group>"; };
-		928CCDB818AD1E9D0072F88C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9299A88B18AE92810011B4D3 /* YANHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANHomePageViewController.h; sourceTree = "<group>"; };
-		9299A88C18AE92810011B4D3 /* YANHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANHomePageViewController.m; sourceTree = "<group>"; };
-		9299A89018AE9A6D0011B4D3 /* YANHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANHTTPSessionManager.h; sourceTree = "<group>"; };
-		9299A89118AE9A6D0011B4D3 /* YANHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANHTTPSessionManager.m; sourceTree = "<group>"; };
-		9299A89318AEA4D30011B4D3 /* YANPhotoPreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANPhotoPreviewCell.h; sourceTree = "<group>"; };
-		9299A89418AEA4D30011B4D3 /* YANPhotoPreviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANPhotoPreviewCell.m; sourceTree = "<group>"; };
-		9299A89618AEBB2A0011B4D3 /* YANPostModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANPostModel.h; sourceTree = "<group>"; };
-		9299A89718AEBB2A0011B4D3 /* YANPostModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANPostModel.m; sourceTree = "<group>"; };
-		9299A8A118AEC9790011B4D3 /* YANPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANPost.h; sourceTree = "<group>"; };
-		9299A8A218AEC9790011B4D3 /* YANPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANPost.m; sourceTree = "<group>"; };
-		BBF3A6DFA56B4FFCB29C07C0 /* libPods-yande.re.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-yande.re.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		928CCD8618AD1E9D0072F88C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				928CCD8F18AD1E9D0072F88C /* CoreGraphics.framework in Frameworks */,
-				9211C5ED18AFD4A20021665E /* Crashlytics.framework in Frameworks */,
-				928CCD9118AD1E9D0072F88C /* UIKit.framework in Frameworks */,
-				928CCD8D18AD1E9D0072F88C /* Foundation.framework in Frameworks */,
-				AFABCA77BFE6455FB017F487 /* libPods-yande.re.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		928CCDAA18AD1E9D0072F88C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				928CCDAF18AD1E9D0072F88C /* XCTest.framework in Frameworks */,
-				928CCDB118AD1E9D0072F88C /* UIKit.framework in Frameworks */,
-				928CCDB018AD1E9D0072F88C /* Foundation.framework in Frameworks */,
-				4B798AF000FF4F25A4ABC64D /* libPods-yande.reTests.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		9211C5F118AFE7440021665E /* Workaround */ = {
-			isa = PBXGroup;
-			children = (
-				9211C5F218AFE7B30021665E /* SDImageCache+DeadLock.h */,
-				9211C5F318AFE7B30021665E /* SDImageCache+DeadLock.m */,
-			);
-			name = Workaround;
-			sourceTree = "<group>";
-		};
-		924E903A19608BCF0090D347 /* List */ = {
-			isa = PBXGroup;
-			children = (
-				9299A88B18AE92810011B4D3 /* YANHomePageViewController.h */,
-				9299A88C18AE92810011B4D3 /* YANHomePageViewController.m */,
-				9299A89318AEA4D30011B4D3 /* YANPhotoPreviewCell.h */,
-				9299A89418AEA4D30011B4D3 /* YANPhotoPreviewCell.m */,
-			);
-			name = List;
-			sourceTree = "<group>";
-		};
-		924E903B19608BD60090D347 /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-				927A3CD6196083C20093D6F0 /* YANPostDetailCollectionViewController.h */,
-				927A3CD7196083C20093D6F0 /* YANPostDetailCollectionViewController.m */,
-				924E903C19608CA00090D347 /* YANPostDetailCollectionViewCell.h */,
-				924E903D19608CA00090D347 /* YANPostDetailCollectionViewCell.m */,
-			);
-			name = Detail;
-			sourceTree = "<group>";
-		};
-		928CCD8018AD1E9D0072F88C = {
-			isa = PBXGroup;
-			children = (
-				928CCD9218AD1E9D0072F88C /* yande.re */,
-				928CCDB418AD1E9D0072F88C /* yande.reTests */,
-				928CCD8B18AD1E9D0072F88C /* Frameworks */,
-				928CCD8A18AD1E9D0072F88C /* Products */,
-				686894194FC74795A62810CB /* Pods-yande.reTests.xcconfig */,
-				36430CFD0C2F4815BADDAE39 /* Pods-yande.re.xcconfig */,
-			);
-			sourceTree = "<group>";
-		};
-		928CCD8A18AD1E9D0072F88C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				928CCD8918AD1E9D0072F88C /* yande.re.app */,
-				928CCDAD18AD1E9D0072F88C /* yande.reTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		928CCD8B18AD1E9D0072F88C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9211C5EC18AFD4A20021665E /* Crashlytics.framework */,
-				928CCD8C18AD1E9D0072F88C /* Foundation.framework */,
-				928CCD8E18AD1E9D0072F88C /* CoreGraphics.framework */,
-				928CCD9018AD1E9D0072F88C /* UIKit.framework */,
-				928CCDAE18AD1E9D0072F88C /* XCTest.framework */,
-				4A90111F084E4ED6B52A94E0 /* libPods.a */,
-				1B3A5E74682D4F03913F823D /* libPods-yande.reTests.a */,
-				BBF3A6DFA56B4FFCB29C07C0 /* libPods-yande.re.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		928CCD9218AD1E9D0072F88C /* yande.re */ = {
-			isa = PBXGroup;
-			children = (
-				928CCD9B18AD1E9D0072F88C /* YANAppDelegate.h */,
-				928CCD9C18AD1E9D0072F88C /* YANAppDelegate.m */,
-				9299A89918AEBF110011B4D3 /* Model */,
-				9299A89A18AEBF1A0011B4D3 /* View */,
-				9299A89B18AEBF210011B4D3 /* Network */,
-				9211C5F118AFE7440021665E /* Workaround */,
-				928CCDA718AD1E9D0072F88C /* Images.xcassets */,
-				928CCD9318AD1E9D0072F88C /* Supporting Files */,
-			);
-			path = yande.re;
-			sourceTree = "<group>";
-		};
-		928CCD9318AD1E9D0072F88C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				928CCD9418AD1E9D0072F88C /* yande.re-Info.plist */,
-				928CCD9518AD1E9D0072F88C /* InfoPlist.strings */,
-				928CCD9818AD1E9D0072F88C /* main.m */,
-				928CCD9A18AD1E9D0072F88C /* yande.re-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		928CCDB418AD1E9D0072F88C /* yande.reTests */ = {
-			isa = PBXGroup;
-			children = (
-				924DE02F18B92B5100AE602E /* YANPostModelSpec.m */,
-				928CCDB518AD1E9D0072F88C /* Supporting Files */,
-			);
-			path = yande.reTests;
-			sourceTree = "<group>";
-		};
-		928CCDB518AD1E9D0072F88C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				924DE03118B92BAB00AE602E /* yande.reTests-Prefix.pch */,
-				928CCDB618AD1E9D0072F88C /* yande.reTests-Info.plist */,
-				928CCDB718AD1E9D0072F88C /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9299A89918AEBF110011B4D3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				9299A89618AEBB2A0011B4D3 /* YANPostModel.h */,
-				9299A89718AEBB2A0011B4D3 /* YANPostModel.m */,
-				9299A8A118AEC9790011B4D3 /* YANPost.h */,
-				9299A8A218AEC9790011B4D3 /* YANPost.m */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		9299A89A18AEBF1A0011B4D3 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				928CCD9E18AD1E9D0072F88C /* Main.storyboard */,
-				924E903A19608BCF0090D347 /* List */,
-				924E903B19608BD60090D347 /* Detail */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		9299A89B18AEBF210011B4D3 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				9299A89018AE9A6D0011B4D3 /* YANHTTPSessionManager.h */,
-				9299A89118AE9A6D0011B4D3 /* YANHTTPSessionManager.m */,
-			);
-			name = Network;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		928CCD8818AD1E9D0072F88C /* yande.re */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 928CCDBE18AD1E9D0072F88C /* Build configuration list for PBXNativeTarget "yande.re" */;
-			buildPhases = (
-				605D94BC70E947A7A570FC84 /* Check Pods Manifest.lock */,
-				928CCD8518AD1E9D0072F88C /* Sources */,
-				928CCD8618AD1E9D0072F88C /* Frameworks */,
-				928CCD8718AD1E9D0072F88C /* Resources */,
-				D1EC4BFE7570455291A39BD2 /* Copy Pods Resources */,
-				9211C5EB18AFD47C0021665E /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = yande.re;
-			productName = yande.re;
-			productReference = 928CCD8918AD1E9D0072F88C /* yande.re.app */;
-			productType = "com.apple.product-type.application";
-		};
-		928CCDAC18AD1E9D0072F88C /* yande.reTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 928CCDC118AD1E9D0072F88C /* Build configuration list for PBXNativeTarget "yande.reTests" */;
-			buildPhases = (
-				A4795233B1C54BA8B006DCCC /* Check Pods Manifest.lock */,
-				928CCDA918AD1E9D0072F88C /* Sources */,
-				928CCDAA18AD1E9D0072F88C /* Frameworks */,
-				928CCDAB18AD1E9D0072F88C /* Resources */,
-				C338F41EE51D454B8C98B4E3 /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				928CCDB318AD1E9D0072F88C /* PBXTargetDependency */,
-			);
-			name = yande.reTests;
-			productName = yande.reTests;
-			productReference = 928CCDAD18AD1E9D0072F88C /* yande.reTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		928CCD8118AD1E9D0072F88C /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				CLASSPREFIX = YAN;
-				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = leafduo.com;
-				TargetAttributes = {
-					928CCDAC18AD1E9D0072F88C = {
-						TestTargetID = 928CCD8818AD1E9D0072F88C;
-					};
-				};
-			};
-			buildConfigurationList = 928CCD8418AD1E9D0072F88C /* Build configuration list for PBXProject "yande.re" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = 928CCD8018AD1E9D0072F88C;
-			productRefGroup = 928CCD8A18AD1E9D0072F88C /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				928CCD8818AD1E9D0072F88C /* yande.re */,
-				928CCDAC18AD1E9D0072F88C /* yande.reTests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		928CCD8718AD1E9D0072F88C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				928CCDA818AD1E9D0072F88C /* Images.xcassets in Resources */,
-				928CCDA018AD1E9D0072F88C /* Main.storyboard in Resources */,
-				928CCD9718AD1E9D0072F88C /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		928CCDAB18AD1E9D0072F88C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				928CCDB918AD1E9D0072F88C /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		605D94BC70E947A7A570FC84 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		9211C5EB18AFD47C0021665E /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run 8642627290b54634887afc54ed5ae8a3a5036e20 936c2c466c9ea5dd87244f62d66fa82e1d2c11f9feac622dfe6ece535c60890b";
-		};
-		A4795233B1C54BA8B006DCCC /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C338F41EE51D454B8C98B4E3 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-yande.reTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D1EC4BFE7570455291A39BD2 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-yande.re-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		928CCD8518AD1E9D0072F88C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				924E903E19608CA00090D347 /* YANPostDetailCollectionViewCell.m in Sources */,
-				9211C5F418AFE7B30021665E /* SDImageCache+DeadLock.m in Sources */,
-				928CCD9918AD1E9D0072F88C /* main.m in Sources */,
-				9299A89518AEA4D30011B4D3 /* YANPhotoPreviewCell.m in Sources */,
-				9299A89818AEBB2A0011B4D3 /* YANPostModel.m in Sources */,
-				9299A8A318AEC9790011B4D3 /* YANPost.m in Sources */,
-				928CCD9D18AD1E9D0072F88C /* YANAppDelegate.m in Sources */,
-				927A3CD8196083C20093D6F0 /* YANPostDetailCollectionViewController.m in Sources */,
-				9299A89218AE9A6D0011B4D3 /* YANHTTPSessionManager.m in Sources */,
-				9299A88E18AE92810011B4D3 /* YANHomePageViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		928CCDA918AD1E9D0072F88C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				924DE03018B92B5100AE602E /* YANPostModelSpec.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		928CCDB318AD1E9D0072F88C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 928CCD8818AD1E9D0072F88C /* yande.re */;
-			targetProxy = 928CCDB218AD1E9D0072F88C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		928CCD9518AD1E9D0072F88C /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				928CCD9618AD1E9D0072F88C /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		928CCD9E18AD1E9D0072F88C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				928CCD9F18AD1E9D0072F88C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		928CCDB718AD1E9D0072F88C /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				928CCDB818AD1E9D0072F88C /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		928CCDBC18AD1E9D0072F88C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		928CCDBD18AD1E9D0072F88C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		928CCDBF18AD1E9D0072F88C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 36430CFD0C2F4815BADDAE39 /* Pods-yande.re.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "yande.re/yande.re-Prefix.pch";
-				INFOPLIST_FILE = "yande.re/yande.re-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		928CCDC018AD1E9D0072F88C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 36430CFD0C2F4815BADDAE39 /* Pods-yande.re.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "yande.re/yande.re-Prefix.pch";
-				INFOPLIST_FILE = "yande.re/yande.re-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		928CCDC218AD1E9D0072F88C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 686894194FC74795A62810CB /* Pods-yande.reTests.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/yande.re.app/yande.re";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "yande.reTests/yande.reTests-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "yande.reTests/yande.reTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		928CCDC318AD1E9D0072F88C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 686894194FC74795A62810CB /* Pods-yande.reTests.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/yande.re.app/yande.re";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "yande.reTests/yande.reTests-Prefix.pch";
-				INFOPLIST_FILE = "yande.reTests/yande.reTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		928CCD8418AD1E9D0072F88C /* Build configuration list for PBXProject "yande.re" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				928CCDBC18AD1E9D0072F88C /* Debug */,
-				928CCDBD18AD1E9D0072F88C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		928CCDBE18AD1E9D0072F88C /* Build configuration list for PBXNativeTarget "yande.re" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				928CCDBF18AD1E9D0072F88C /* Debug */,
-				928CCDC018AD1E9D0072F88C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		928CCDC118AD1E9D0072F88C /* Build configuration list for PBXNativeTarget "yande.reTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				928CCDC218AD1E9D0072F88C /* Debug */,
-				928CCDC318AD1E9D0072F88C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = 928CCD8118AD1E9D0072F88C /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>023A6CDFC24DF2610DF13ABA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-yande.re.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-yande.re/Pods-yande.re.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1B3A5E74682D4F03913F823D</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-yande.reTests.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>4A90111F084E4ED6B52A94E0</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>4B798AF000FF4F25A4ABC64D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1B3A5E74682D4F03913F823D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>605D94BC70E947A7A570FC84</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>814D0878AD222EC6DD4DB66E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-yande.reTests.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-yande.reTests/Pods-yande.reTests.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9211C5EB18AFD47C0021665E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>./Crashlytics.framework/run 8642627290b54634887afc54ed5ae8a3a5036e20 936c2c466c9ea5dd87244f62d66fa82e1d2c11f9feac622dfe6ece535c60890b</string>
+		</dict>
+		<key>9211C5EC18AFD4A20021665E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>path</key>
+			<string>Crashlytics.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9211C5ED18AFD4A20021665E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9211C5EC18AFD4A20021665E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9211C5F118AFE7440021665E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9211C5F218AFE7B30021665E</string>
+				<string>9211C5F318AFE7B30021665E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Workaround</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9211C5F218AFE7B30021665E</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>SDImageCache+DeadLock.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9211C5F318AFE7B30021665E</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>SDImageCache+DeadLock.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9211C5F418AFE7B30021665E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9211C5F318AFE7B30021665E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>924DE02F18B92B5100AE602E</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>YANPostModelSpec.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>924DE03018B92B5100AE602E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>924DE02F18B92B5100AE602E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>924DE03118B92BAB00AE602E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>yande.reTests-Prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>924E903A19608BCF0090D347</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9299A88B18AE92810011B4D3</string>
+				<string>9299A88C18AE92810011B4D3</string>
+				<string>9299A89318AEA4D30011B4D3</string>
+				<string>9299A89418AEA4D30011B4D3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>List</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>924E903B19608BD60090D347</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>927A3CD6196083C20093D6F0</string>
+				<string>927A3CD7196083C20093D6F0</string>
+				<string>924E903C19608CA00090D347</string>
+				<string>924E903D19608CA00090D347</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Detail</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>924E903C19608CA00090D347</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>YANPostDetailCollectionViewCell.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>924E903D19608CA00090D347</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>YANPostDetailCollectionViewCell.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>924E903E19608CA00090D347</key>
+		<dict>
+			<key>fileRef</key>
+			<string>924E903D19608CA00090D347</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>927A3CD6196083C20093D6F0</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>YANPostDetailCollectionViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>927A3CD7196083C20093D6F0</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>YANPostDetailCollectionViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>927A3CD8196083C20093D6F0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>927A3CD7196083C20093D6F0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>928CCD8018AD1E9D0072F88C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>928CCD9218AD1E9D0072F88C</string>
+				<string>928CCDB418AD1E9D0072F88C</string>
+				<string>928CCD8B18AD1E9D0072F88C</string>
+				<string>928CCD8A18AD1E9D0072F88C</string>
+				<string>E7F168C300B965B784898189</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>928CCD8118AD1E9D0072F88C</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>CLASSPREFIX</key>
+				<string>YAN</string>
+				<key>LastUpgradeCheck</key>
+				<string>0510</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>leafduo.com</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>928CCDAC18AD1E9D0072F88C</key>
+					<dict>
+						<key>TestTargetID</key>
+						<string>928CCD8818AD1E9D0072F88C</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>928CCD8418AD1E9D0072F88C</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+				<string>Base</string>
+			</array>
+			<key>mainGroup</key>
+			<string>928CCD8018AD1E9D0072F88C</string>
+			<key>productRefGroup</key>
+			<string>928CCD8A18AD1E9D0072F88C</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>928CCD8818AD1E9D0072F88C</string>
+				<string>928CCDAC18AD1E9D0072F88C</string>
+			</array>
+		</dict>
+		<key>928CCD8418AD1E9D0072F88C</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>928CCDBC18AD1E9D0072F88C</string>
+				<string>928CCDBD18AD1E9D0072F88C</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>928CCD8518AD1E9D0072F88C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>924E903E19608CA00090D347</string>
+				<string>9211C5F418AFE7B30021665E</string>
+				<string>928CCD9918AD1E9D0072F88C</string>
+				<string>9299A89518AEA4D30011B4D3</string>
+				<string>9299A89818AEBB2A0011B4D3</string>
+				<string>9299A8A318AEC9790011B4D3</string>
+				<string>928CCD9D18AD1E9D0072F88C</string>
+				<string>927A3CD8196083C20093D6F0</string>
+				<string>9299A89218AE9A6D0011B4D3</string>
+				<string>9299A88E18AE92810011B4D3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>928CCD8618AD1E9D0072F88C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>928CCD8F18AD1E9D0072F88C</string>
+				<string>9211C5ED18AFD4A20021665E</string>
+				<string>928CCD9118AD1E9D0072F88C</string>
+				<string>928CCD8D18AD1E9D0072F88C</string>
+				<string>AFABCA77BFE6455FB017F487</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>928CCD8718AD1E9D0072F88C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>928CCDA818AD1E9D0072F88C</string>
+				<string>928CCDA018AD1E9D0072F88C</string>
+				<string>928CCD9718AD1E9D0072F88C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>928CCD8818AD1E9D0072F88C</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>928CCDBE18AD1E9D0072F88C</string>
+			<key>buildPhases</key>
+			<array>
+				<string>605D94BC70E947A7A570FC84</string>
+				<string>928CCD8518AD1E9D0072F88C</string>
+				<string>928CCD8618AD1E9D0072F88C</string>
+				<string>928CCD8718AD1E9D0072F88C</string>
+				<string>D1EC4BFE7570455291A39BD2</string>
+				<string>9211C5EB18AFD47C0021665E</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>yande.re</string>
+			<key>productName</key>
+			<string>yande.re</string>
+			<key>productReference</key>
+			<string>928CCD8918AD1E9D0072F88C</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>928CCD8918AD1E9D0072F88C</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>yande.re.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>928CCD8A18AD1E9D0072F88C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>928CCD8918AD1E9D0072F88C</string>
+				<string>928CCDAD18AD1E9D0072F88C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>928CCD8B18AD1E9D0072F88C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9211C5EC18AFD4A20021665E</string>
+				<string>928CCD8C18AD1E9D0072F88C</string>
+				<string>928CCD8E18AD1E9D0072F88C</string>
+				<string>928CCD9018AD1E9D0072F88C</string>
+				<string>928CCDAE18AD1E9D0072F88C</string>
+				<string>4A90111F084E4ED6B52A94E0</string>
+				<string>1B3A5E74682D4F03913F823D</string>
+				<string>BBF3A6DFA56B4FFCB29C07C0</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>928CCD8C18AD1E9D0072F88C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>928CCD8D18AD1E9D0072F88C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>928CCD8C18AD1E9D0072F88C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>928CCD8E18AD1E9D0072F88C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreGraphics.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreGraphics.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>928CCD8F18AD1E9D0072F88C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>928CCD8E18AD1E9D0072F88C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>928CCD9018AD1E9D0072F88C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>UIKit.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/UIKit.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>928CCD9118AD1E9D0072F88C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>928CCD9018AD1E9D0072F88C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>928CCD9218AD1E9D0072F88C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>928CCD9B18AD1E9D0072F88C</string>
+				<string>928CCD9C18AD1E9D0072F88C</string>
+				<string>9299A89918AEBF110011B4D3</string>
+				<string>9299A89A18AEBF1A0011B4D3</string>
+				<string>9299A89B18AEBF210011B4D3</string>
+				<string>9211C5F118AFE7440021665E</string>
+				<string>928CCDA718AD1E9D0072F88C</string>
+				<string>928CCD9318AD1E9D0072F88C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>yande.re</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>928CCD9318AD1E9D0072F88C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>928CCD9418AD1E9D0072F88C</string>
+				<string>928CCD9518AD1E9D0072F88C</string>
+				<string>928CCD9818AD1E9D0072F88C</string>
+				<string>928CCD9A18AD1E9D0072F88C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>928CCD9418AD1E9D0072F88C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>yande.re-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>928CCD9518AD1E9D0072F88C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>928CCD9618AD1E9D0072F88C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>928CCD9618AD1E9D0072F88C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>928CCD9718AD1E9D0072F88C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>928CCD9518AD1E9D0072F88C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>928CCD9818AD1E9D0072F88C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>928CCD9918AD1E9D0072F88C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>928CCD9818AD1E9D0072F88C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>928CCD9A18AD1E9D0072F88C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>yande.re-Prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>928CCD9B18AD1E9D0072F88C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>YANAppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>928CCD9C18AD1E9D0072F88C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>YANAppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>928CCD9D18AD1E9D0072F88C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>928CCD9C18AD1E9D0072F88C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>928CCD9E18AD1E9D0072F88C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>928CCD9F18AD1E9D0072F88C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>928CCD9F18AD1E9D0072F88C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>928CCDA018AD1E9D0072F88C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>928CCD9E18AD1E9D0072F88C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>928CCDA718AD1E9D0072F88C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Images.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>928CCDA818AD1E9D0072F88C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>928CCDA718AD1E9D0072F88C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>928CCDA918AD1E9D0072F88C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>924DE03018B92B5100AE602E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>928CCDAA18AD1E9D0072F88C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>928CCDAF18AD1E9D0072F88C</string>
+				<string>928CCDB118AD1E9D0072F88C</string>
+				<string>928CCDB018AD1E9D0072F88C</string>
+				<string>4B798AF000FF4F25A4ABC64D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>928CCDAB18AD1E9D0072F88C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>928CCDB918AD1E9D0072F88C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>928CCDAC18AD1E9D0072F88C</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>928CCDC118AD1E9D0072F88C</string>
+			<key>buildPhases</key>
+			<array>
+				<string>A4795233B1C54BA8B006DCCC</string>
+				<string>928CCDA918AD1E9D0072F88C</string>
+				<string>928CCDAA18AD1E9D0072F88C</string>
+				<string>928CCDAB18AD1E9D0072F88C</string>
+				<string>C338F41EE51D454B8C98B4E3</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>928CCDB318AD1E9D0072F88C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>yande.reTests</string>
+			<key>productName</key>
+			<string>yande.reTests</string>
+			<key>productReference</key>
+			<string>928CCDAD18AD1E9D0072F88C</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>928CCDAD18AD1E9D0072F88C</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>yande.reTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>928CCDAE18AD1E9D0072F88C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>XCTest.framework</string>
+			<key>path</key>
+			<string>Library/Frameworks/XCTest.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>928CCDAF18AD1E9D0072F88C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>928CCDAE18AD1E9D0072F88C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>928CCDB018AD1E9D0072F88C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>928CCD8C18AD1E9D0072F88C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>928CCDB118AD1E9D0072F88C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>928CCD9018AD1E9D0072F88C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>928CCDB218AD1E9D0072F88C</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>928CCD8118AD1E9D0072F88C</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>928CCD8818AD1E9D0072F88C</string>
+			<key>remoteInfo</key>
+			<string>yande.re</string>
+		</dict>
+		<key>928CCDB318AD1E9D0072F88C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>928CCD8818AD1E9D0072F88C</string>
+			<key>targetProxy</key>
+			<string>928CCDB218AD1E9D0072F88C</string>
+		</dict>
+		<key>928CCDB418AD1E9D0072F88C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>924DE02F18B92B5100AE602E</string>
+				<string>928CCDB518AD1E9D0072F88C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>yande.reTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>928CCDB518AD1E9D0072F88C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>924DE03118B92BAB00AE602E</string>
+				<string>928CCDB618AD1E9D0072F88C</string>
+				<string>928CCDB718AD1E9D0072F88C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>928CCDB618AD1E9D0072F88C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>yande.reTests-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>928CCDB718AD1E9D0072F88C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>928CCDB818AD1E9D0072F88C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>928CCDB818AD1E9D0072F88C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>928CCDB918AD1E9D0072F88C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>928CCDB718AD1E9D0072F88C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>928CCDBC18AD1E9D0072F88C</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.1</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>928CCDBD18AD1E9D0072F88C</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.1</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>928CCDBE18AD1E9D0072F88C</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>928CCDBF18AD1E9D0072F88C</string>
+				<string>928CCDC018AD1E9D0072F88C</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>928CCDBF18AD1E9D0072F88C</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>023A6CDFC24DF2610DF13ABA</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>CODE_SIGN_IDENTITY</key>
+				<string>iPhone Developer</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>$(PROJECT_DIR)</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>yande.re/yande.re-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>yande.re/yande.re-Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>928CCDC018AD1E9D0072F88C</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>CE632A9FFF08BFCD58E1BBA3</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>CODE_SIGN_IDENTITY</key>
+				<string>iPhone Developer</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>$(PROJECT_DIR)</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>yande.re/yande.re-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>yande.re/yande.re-Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>928CCDC118AD1E9D0072F88C</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>928CCDC218AD1E9D0072F88C</string>
+				<string>928CCDC318AD1E9D0072F88C</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>928CCDC218AD1E9D0072F88C</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>814D0878AD222EC6DD4DB66E</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/yande.re.app/yande.re</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>yande.reTests/yande.reTests-Prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>yande.reTests/yande.reTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>xctest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>928CCDC318AD1E9D0072F88C</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>9A6A52B5E3479DFEA4975868</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/yande.re.app/yande.re</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>yande.reTests/yande.reTests-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>yande.reTests/yande.reTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>xctest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>9299A88B18AE92810011B4D3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>YANHomePageViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9299A88C18AE92810011B4D3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>YANHomePageViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9299A88E18AE92810011B4D3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9299A88C18AE92810011B4D3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9299A89018AE9A6D0011B4D3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>YANHTTPSessionManager.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9299A89118AE9A6D0011B4D3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>YANHTTPSessionManager.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9299A89218AE9A6D0011B4D3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9299A89118AE9A6D0011B4D3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9299A89318AEA4D30011B4D3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>YANPhotoPreviewCell.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9299A89418AEA4D30011B4D3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>YANPhotoPreviewCell.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9299A89518AEA4D30011B4D3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9299A89418AEA4D30011B4D3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9299A89618AEBB2A0011B4D3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>YANPostModel.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9299A89718AEBB2A0011B4D3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>YANPostModel.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9299A89818AEBB2A0011B4D3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9299A89718AEBB2A0011B4D3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9299A89918AEBF110011B4D3</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9299A89618AEBB2A0011B4D3</string>
+				<string>9299A89718AEBB2A0011B4D3</string>
+				<string>9299A8A118AEC9790011B4D3</string>
+				<string>9299A8A218AEC9790011B4D3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Model</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9299A89A18AEBF1A0011B4D3</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>928CCD9E18AD1E9D0072F88C</string>
+				<string>924E903A19608BCF0090D347</string>
+				<string>924E903B19608BD60090D347</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>View</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9299A89B18AEBF210011B4D3</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9299A89018AE9A6D0011B4D3</string>
+				<string>9299A89118AE9A6D0011B4D3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Network</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9299A8A118AEC9790011B4D3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>YANPost.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9299A8A218AEC9790011B4D3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>YANPost.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9299A8A318AEC9790011B4D3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9299A8A218AEC9790011B4D3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9A6A52B5E3479DFEA4975868</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-yande.reTests.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-yande.reTests/Pods-yande.reTests.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A4795233B1C54BA8B006DCCC</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>AFABCA77BFE6455FB017F487</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BBF3A6DFA56B4FFCB29C07C0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BBF3A6DFA56B4FFCB29C07C0</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-yande.re.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>C338F41EE51D454B8C98B4E3</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-yande.reTests/Pods-yande.reTests-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>CE632A9FFF08BFCD58E1BBA3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-yande.re.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-yande.re/Pods-yande.re.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D1EC4BFE7570455291A39BD2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-yande.re/Pods-yande.re-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>E7F168C300B965B784898189</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>023A6CDFC24DF2610DF13ABA</string>
+				<string>CE632A9FFF08BFCD58E1BBA3</string>
+				<string>814D0878AD222EC6DD4DB66E</string>
+				<string>9A6A52B5E3479DFEA4975868</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>928CCD8118AD1E9D0072F88C</string>
+</dict>
+</plist>
