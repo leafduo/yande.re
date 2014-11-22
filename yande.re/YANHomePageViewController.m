@@ -55,6 +55,12 @@
     [super viewWillAppear:animated];
 
     [self.collectionView reloadData];
+
+    if (self.postModel.activePostIndex < [self.collectionView numberOfItemsInSection:0]) {
+    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:self.postModel.activePostIndex inSection:0]
+                                atScrollPosition:UICollectionViewScrollPositionNone
+                                        animated:YES];
+    }
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -147,6 +153,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showDetail"]) {
         YANPostDetailCollectionViewController *controller = segue.destinationViewController;
+        self.postModel.activePostIndex = [(NSIndexPath *)[[self.collectionView indexPathsForSelectedItems] firstObject] item];
         controller.postModel = self.postModel;
     }
 }

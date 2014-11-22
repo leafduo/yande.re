@@ -36,6 +36,16 @@ static NSString * const reuseIdentifier = @"Cell";
     [super viewWillAppear:animated];
 
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:self.postModel.activePostIndex inSection:0]
+                                atScrollPosition:UICollectionViewScrollPositionLeft
+                                        animated:NO];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+
+    self.postModel.activePostIndex = [(NSIndexPath *)[[self.collectionView indexPathsForVisibleItems] firstObject] item];
 }
 
 - (void)didReceiveMemoryWarning
