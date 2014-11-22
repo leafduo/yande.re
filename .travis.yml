@@ -1,3 +1,4 @@
 language: objective-c
 xcode_workspace: yande.re.xcworkspace
 xcode_scheme: yande.re
+xcode_sdk: iphonesimulator8.1
