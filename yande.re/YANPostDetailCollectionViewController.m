@@ -32,10 +32,13 @@ static NSString * const reuseIdentifier = @"Cell";
     [super viewDidLoad];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:self.postModel.activePostIndex inSection:0]
                                 atScrollPosition:UICollectionViewScrollPositionLeft
                                         animated:NO];
